@@ -1,5 +1,6 @@
 #ifndef Communication_h
 #define Communication_h
+
 // Dependancies
 #include <Arduino.h>
 #include <ArduinoJson.h>

@@ -3,6 +3,7 @@
 #include "Memory.h"
 #include "GPIO_LED.h"
 #include "Communication.h"
+#include "Timer.h"
 
 void setup()
 {
@@ -10,19 +11,11 @@ void setup()
   // connectAWS();
   // InitBuiltinLED();
   InitEEPROM();
+  Initialize_Timer();
 }
 
 void loop()
 {
-  static uint8_t sec = 0;
-  uint32_t c = readTotalMinutesFromEEPROM();
   // client.loop();
   delay(1000);
-  sec++;
-  if (sec >= 60)
-  {
-    c++;
-    writeTotalMinutesToEEPROM(c);
-    sec = 0;
-  }
 }
