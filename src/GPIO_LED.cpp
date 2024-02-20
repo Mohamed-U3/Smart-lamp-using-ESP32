@@ -4,31 +4,36 @@
 void InitRGBLamp()
 {
   // LED pins configration
-  pinMode(RED_pin, OUTPUT);
-  pinMode(GREEN_pin, OUTPUT);
-  pinMode(BLUE_pin, OUTPUT);
-  pinMode(WHITE_pin, OUTPUT);
+  PIN_MODE(RED_pin,   OUTPUT);
+  PIN_MODE(GREEN_pin, OUTPUT);
+  PIN_MODE(BLUE_pin,  OUTPUT);
+  PIN_MODE(WHITE_pin, OUTPUT);
 }
 
 void InitWhiteLamp()
 {
   // LED pins configration
-  pinMode(Worm_pin, OUTPUT);
-  pinMode(WHITE_pin, OUTPUT);
+  PIN_MODE(Worm_pin,  OUTPUT);
+  PIN_MODE(WHITE_pin, OUTPUT);
 }
 
 void SetRGBLamp(uint8_t Red, uint8_t Green, uint8_t Blue, uint8_t Intensity)
 {
-  analogWrite(RED_pin, Red);
-  analogWrite(GREEN_pin, Green);
-  analogWrite(BLUE_pin, Blue);
-  analogWrite(WHITE_pin, Intensity);
+  ANALOG_WRITE(RED_pin,     Red       );
+  ANALOG_WRITE(GREEN_pin,   Green     );
+  ANALOG_WRITE(BLUE_pin,    Blue      );
+  ANALOG_WRITE(WHITE_pin,   Intensity );
 }
 
 void SetWhiteLamp(uint8_t Worm, uint8_t Intensity)
 {
-  analogWrite(Worm_pin, Worm);
-  analogWrite(WHITE_pin, Intensity);
+  ANALOG_WRITE(Worm_pin,    Worm      );
+  ANALOG_WRITE(WHITE_pin,   Intensity );
+}
+
+void LED_Task()
+{
+  
 }
 
 void RGBLampTest()

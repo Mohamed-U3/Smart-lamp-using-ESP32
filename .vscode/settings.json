@@ -2,6 +2,12 @@
     "files.associations": {
         "gpio_led.h": "c",
         "arduino.h": "c",
-        "gpio_led_interface.h": "c"
+        "gpio_led_interface.h": "c",
+        "random": "cpp",
+        "common_include.h": "c",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
     }
 }

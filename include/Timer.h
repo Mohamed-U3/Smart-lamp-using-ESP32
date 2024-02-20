@@ -1,16 +1,9 @@
-#ifndef Timer_h
-#define Timer_h
+#ifndef TIMER_H
+#define TIMER_H
 
-// Dependancies
-#include <Arduino.h>
-#include <Ticker.h>
-#include "Memory.h"
-
-// Declearation
-Ticker timer; //  Ticker object for the timer
+#include "Timer_interface.h"
 
 // Function declearation
-void Timer_event();
 void Initialize_Timer();
 
 #endif

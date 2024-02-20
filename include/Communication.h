@@ -1,16 +1,11 @@
-#ifndef Communication_h
-#define Communication_h
+#ifndef COMMUNICATION_H
+#define COMMUNICATION_H
 
 // Dependancies
-#include <Arduino.h>
-#include <ArduinoJson.h>
-#include <PubSubClient.h>
-#include <WiFiClientSecure.h>
-#include <WiFi.h>
 #include "Certs/secrets.h"
 #include "Communication_interface.h"
 
-// class declarations and global variable declarations
+// class declearations and global variable declearations
 extern WiFiClientSecure net;
 extern PubSubClient client;
 

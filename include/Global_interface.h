@@ -1,0 +1,5 @@
+#ifndef GLOBAL_INTERFACE_H
+#define GLOBAL_INTERFACE_H
+
+
+#endif

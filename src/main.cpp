@@ -12,10 +12,13 @@ void setup()
   // InitBuiltinLED();
   InitEEPROM();
   Initialize_Timer();
+  InitRGBLamp();
 }
 
 void loop()
 {
   // client.loop();
+  LED_Task();
+  Memory_Task();
   delay(1000);
 }

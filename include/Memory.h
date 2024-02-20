@@ -1,11 +1,10 @@
-#ifndef Memory_h
-#define Memory_h
-// dependancies
-#include <Arduino.h>
-#include <EEPROM.h>
+#ifndef MEMORY_H
+#define MEMORY_H
 
+#include "Memory_interface.h"
+
+// Function declearation
 void InitEEPROM();
-void writeTotalMinutesToEEPROM(uint32_t totalMinutes);
-uint32_t readTotalMinutesFromEEPROM();
+void Memory_Task();
 
 #endif

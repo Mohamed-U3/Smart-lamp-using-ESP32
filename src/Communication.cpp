@@ -1,85 +1,86 @@
 #include "Communication.h"
 
+// class and global variable definitions
 WiFiClientSecure net = WiFiClientSecure();
 PubSubClient client(net);
 
 void messageHandler(char *topic, byte *payload, unsigned int length)
 {
-    Serial.print("incoming: ");
-    Serial.println(topic);
+    SERIAL_PRINT("incoming: ");
+    SERIAL_PRINTLN(topic);
 
-    JsonDocument doc;
-    deserializeJson(doc, payload);
+    JSONDOCUMENT doc;
+    DESERIALIZEJSON(doc, payload);
     const char *message = doc["message"];
-    Serial.println();
+    SERIAL_PRINTLN();
 
     for (int i = 0; i < length; i++)
     {
-        Serial.print((char)payload[i]); // Pring payload content
+        SERIAL_PRINT((char)payload[i]); // Pring payload content
     }
     char led = (char)payload[0]; // Extracting the controlling command from the Payload to Controlling LED from AWS
-    Serial.print("Command: ");
-    Serial.println(led);
+    SERIAL_PRINT("Command: ");
+    SERIAL_PRINTLN(led);
 
     if (led == 49) // 49 is the ASCI value of 1
     {
-        digitalWrite(lamp, HIGH);
-        Serial.println("Lamp_State changed to HIGH");
+        DIGITAL_WRITE(lamp, HIGH);
+        SERIAL_PRINTLN("Lamp_State changed to HIGH");
     }
     else if (led == 48) // 48 is the ASCI value of 0
     {
-        digitalWrite(lamp, LOW);
-        Serial.println("Lamp_State changed to LOW");
+        DIGITAL_WRITE(lamp, LOW);
+        SERIAL_PRINTLN("Lamp_State changed to LOW");
     }
-    Serial.println();
+    SERIAL_PRINTLN();
 }
 
 void connectAWS()
 {
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    WIFI_MODE(WIFI_STA);
+    WIFI_BEGIN(WIFI_SSID, WIFI_PASSWORD);
 
-    Serial.println("Connecting to Wi-Fi");
+    SERIAL_PRINTLN("Connecting to Wi-Fi");
 
-    while (WiFi.status() != WL_CONNECTED)
+    while (WIFI_STATUS() != WL_CONNECTED)
     {
-        delay(500);
-        Serial.print(".");
+        DELAY(500);
+        SERIAL_PRINT(".");
     }
 
     // Configure WiFiClientSecure to use the AWS IoT device credentials
-    net.setCACert(AWS_CERT_CA);
-    net.setCertificate(AWS_CERT_CRT);
-    net.setPrivateKey(AWS_CERT_PRIVATE);
+    NET_SET_CA_CERT(AWS_CERT_CA);
+    NET_SET_CERTIFICATE(AWS_CERT_CRT);
+    NET_SET_PRIVATEKEY(AWS_CERT_PRIVATE);
 
     // Connect to the MQTT broker on the AWS endpoint we defined earlier
-    client.setServer(AWS_IOT_ENDPOINT, 8883);
+    CLIENT_SET_SERVER(AWS_IOT_ENDPOINT, 8883);
 
     // Create a message handler
-    client.setCallback(messageHandler);
+    CLIENT_SET_CALLBACK(messageHandler);
 
-    Serial.println("Connecting to AWS IOT");
+    SERIAL_PRINTLN("Connecting to AWS IOT");
 
-    while (!client.connect(THINGNAME))
+    while (!CLIENT_CONNECT(THINGNAME))
     {
-        Serial.print(".");
-        delay(100);
+        SERIAL_PRINT(".");
+        DELAY(100);
     }
 
-    if (!client.connected())
+    if (!CLIENT_CONNECTED())
     {
-        Serial.println("AWS IoT Timeout!");
+        SERIAL_PRINTLN("AWS IoT Timeout!");
         return;
     }
 
     // Subscribe to a topic
-    client.subscribe(AWS_IOT_SUBSCRIBE_TOPIC);
+    CLIENT_SUBSCRIBE(AWS_IOT_SUBSCRIBE_TOPIC);
 
-    Serial.println("AWS IoT Connected!");
+    SERIAL_PRINTLN("AWS IoT Connected!");
 }
 
 void InitBuiltinLED()
 {
-    pinMode(lamp, OUTPUT);
-    digitalWrite(lamp, LOW);
+    PIN_MODE     (lamp, OUTPUT   );
+    DIGITAL_WRITE(lamp, LOW      );
 }
