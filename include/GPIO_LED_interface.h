@@ -13,7 +13,9 @@
 #define Worm_pin 					        19
 
 // Functions defines for portablitiy
-#define PIN_MODE(       PIN, MODE  )        pinMode(        PIN, MODE   )
-#define ANALOG_WRITE(   PIN, PWM   )        analogWrite(    PIN, PWM    )
+#define PIN_MODE(       PIN, MODE   )       pinMode(        PIN, MODE   )
+#define ANALOG_WRITE(   PIN, PWM    )       analogWrite(    PIN, PWM    )
+#define SERIAL_PRINTLN(Micro_string )       Serial.println(Micro_string )
+#define DELAY(          Micro_MS    )       delay(          Micro_MS    )
 
 #endif
