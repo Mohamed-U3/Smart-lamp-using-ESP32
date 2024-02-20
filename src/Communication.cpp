@@ -1,9 +1,42 @@
+/**
+ * ***********************************************************
+ * @file  : Communication.cpp
+ * @brief : file contain functionalities of Communications
+ * @author: Engineer\ Mohamed Yousry
+ * @date  : 20/02/2024
+ * ***********************************************************
+ */
+/*
+ * ***********************************************************
+ * 						Includes
+ * ***********************************************************
+ */
 #include "Communication.h"
 
+/*
+ * ***********************************************************
+ * 						Global variables
+ * ***********************************************************
+ */
 // class and global variable definitions
 WiFiClientSecure net = WiFiClientSecure();
 PubSubClient client(net);
 
+/*
+ * ***********************************************************
+ * 						Functions body
+ * ***********************************************************
+ */
+/**
+ * ***********************************************************
+ * @name  : messageHandler
+ * @brief : handles message from MQTT servers
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void messageHandler(char *topic, byte *payload, unsigned int length)
 {
     SERIAL_PRINT("incoming: ");
@@ -35,6 +68,16 @@ void messageHandler(char *topic, byte *payload, unsigned int length)
     SERIAL_PRINTLN();
 }
 
+/**
+ * ***********************************************************
+ * @name  : connectAWS
+ * @brief : Function that connect the ESP32 to MQTT Server of AWS
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void connectAWS()
 {
     WIFI_MODE(WIFI_STA);
@@ -79,6 +122,16 @@ void connectAWS()
     SERIAL_PRINTLN("AWS IoT Connected!");
 }
 
+/**
+ * ***********************************************************
+ * @name  : InitBuiltinLED
+ * @brief : Initialize the Built in LED
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void InitBuiltinLED()
 {
     PIN_MODE     (lamp, OUTPUT   );

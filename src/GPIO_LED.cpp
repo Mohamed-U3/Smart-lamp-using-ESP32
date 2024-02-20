@@ -1,6 +1,35 @@
+/**
+ * ***********************************************************
+ * @file  : GPIO_LED.cpp
+ * @brief : file contain functionalities of GPIO
+ * @author: Engineer\ Mohamed Yousry
+ * @date  : 20/02/2024
+ * ***********************************************************
+ */
+/*
+ * ***********************************************************
+ * 						Includes
+ * ***********************************************************
+ */
 #include <Arduino.h>
 #include "GPIO_LED_interface.h"
 
+/*
+ * ***********************************************************
+ * 						Functions body
+ * ***********************************************************
+ */
+
+/**
+ * ***********************************************************
+ * @name  : InitRGBLamp
+ * @brief : Initializing RGB lamp
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void InitRGBLamp()
 {
   // LED pins configration
@@ -10,6 +39,16 @@ void InitRGBLamp()
   PIN_MODE(WHITE_pin, OUTPUT);
 }
 
+/**
+ * ***********************************************************
+ * @name  : InitWhiteLamp
+ * @brief : Initializing White lamp
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void InitWhiteLamp()
 {
   // LED pins configration
@@ -17,6 +56,16 @@ void InitWhiteLamp()
   PIN_MODE(WHITE_pin, OUTPUT);
 }
 
+/**
+ * ***********************************************************
+ * @name  : SetRGBLamp
+ * @brief : Set RGB Lamp lights and colors
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void SetRGBLamp(uint8_t Red, uint8_t Green, uint8_t Blue, uint8_t Intensity)
 {
   ANALOG_WRITE(RED_pin,     Red       );
@@ -25,17 +74,47 @@ void SetRGBLamp(uint8_t Red, uint8_t Green, uint8_t Blue, uint8_t Intensity)
   ANALOG_WRITE(WHITE_pin,   Intensity );
 }
 
+/**
+ * ***********************************************************
+ * @name  : SetWhiteLamp
+ * @brief : Set White Lamp lights and tcc
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void SetWhiteLamp(uint8_t Worm, uint8_t Intensity)
 {
   ANALOG_WRITE(Worm_pin,    Worm      );
   ANALOG_WRITE(WHITE_pin,   Intensity );
 }
 
+/**
+ * ***********************************************************
+ * @name  : LED_Task
+ * @brief : Tasks of LED module
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void LED_Task()
 {
   
 }
 
+/**
+ * ***********************************************************
+ * @name  : RGBLampTest
+ * @brief : Function that tests the RGB Lamp
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void RGBLampTest()
 {
   SetRGBLamp(0, 0, 0, 0); // dark black
@@ -71,6 +150,16 @@ void RGBLampTest()
   DELAY(5000);
 }
 
+/**
+ * ***********************************************************
+ * @name  : whiteLampTest
+ * @brief : Function that tests the white Lamp
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void whiteLampTest()
 {
   SetWhiteLamp(255, 255);

@@ -1,8 +1,25 @@
+/**
+ * ***********************************************************
+ * @file  : Communication_interface.h
+ * @brief : file contain macros for functions from others
+ * 			modules
+ * ***********************************************************
+ */
 #ifndef COMMUNICATION_INTERFACE_H
 #define COMMUNICATION_INTERFACE_H
 
+/*
+ * ***********************************************************
+ * 						Includes
+ * ***********************************************************
+ */
 #include "Common_include.h"
 
+/*
+ * ***********************************************************
+ * 						Defines
+ * ***********************************************************
+ */
 #define AWS_IOT_SUBSCRIBE_TOPIC                             "esp32/sub"
 #define lamp                                                2
 
