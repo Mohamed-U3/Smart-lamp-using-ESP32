@@ -51,21 +51,56 @@ void messageHandler(char *topic, byte *payload, unsigned int length)
     {
         SERIAL_PRINT((char)payload[i]); // Pring payload content
     }
+    SERIAL_PRINTLN();
+
     char led = (char)payload[0]; // Extracting the controlling command from the Payload to Controlling LED from AWS
     SERIAL_PRINT("Command: ");
     SERIAL_PRINTLN(led);
 
-    if (led == 49) // 49 is the ASCI value of 1
+    if (led == '1') // 49 is the ASCI value of 1
     {
         DIGITAL_WRITE(lamp, HIGH);
+        COOMUNICATION_WHITE_LAMP_FLAG = true;
         SERIAL_PRINTLN("Lamp_State changed to HIGH");
     }
-    else if (led == 48) // 48 is the ASCI value of 0
+    else if (led == '0') // 48 is the ASCI value of 0
     {
         DIGITAL_WRITE(lamp, LOW);
+        COOMUNICATION_WHITE_LAMP_FLAG = false;
         SERIAL_PRINTLN("Lamp_State changed to LOW");
     }
     SERIAL_PRINTLN();
+}
+
+/**
+ * ***********************************************************
+ * @name  : connectWiFi
+ * @brief : Function that connect the ESP32 to WiFi network
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
+void connectWiFi()
+{
+    again:
+    if (WIFI_STATUS() != WL_CONNECTED)
+    {
+        WIFI_MODE(WIFI_STA);
+        WIFI_BEGIN(WIFI_SSID, WIFI_PASSWORD);
+
+        SERIAL_PRINTLN("Connecting to Wi-Fi");
+        char Wifi_count = 0;
+        while (WIFI_STATUS() != WL_CONNECTED)
+        {
+            DELAY(500);
+            SERIAL_PRINT(".");
+            Wifi_count++;
+            if (Wifi_count == 10)
+                goto again;
+        }
+    }
 }
 
 /**
@@ -80,16 +115,7 @@ void messageHandler(char *topic, byte *payload, unsigned int length)
  */
 void connectAWS()
 {
-    WIFI_MODE(WIFI_STA);
-    WIFI_BEGIN(WIFI_SSID, WIFI_PASSWORD);
-
-    SERIAL_PRINTLN("Connecting to Wi-Fi");
-
-    while (WIFI_STATUS() != WL_CONNECTED)
-    {
-        DELAY(500);
-        SERIAL_PRINT(".");
-    }
+    connectWiFi();
 
     // Configure WiFiClientSecure to use the AWS IoT device credentials
     NET_SET_CA_CERT(AWS_CERT_CA);

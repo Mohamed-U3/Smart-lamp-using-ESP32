@@ -18,5 +18,6 @@
  * 						Global variables
  * ***********************************************************
  */
-uint32_t    minutes_counter;
-bool        minutes_counter_Flag;
+uint32_t    minutes_counter         = 0;
+bool        minutes_counter_Flag    = false;
+bool        White_Lamp_Flag         = false;

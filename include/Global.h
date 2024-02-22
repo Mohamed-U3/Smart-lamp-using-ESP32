@@ -24,4 +24,6 @@
 extern uint32_t     minutes_counter;
 extern bool         minutes_counter_Flag;
 
+extern bool         White_Lamp_Flag;
+
 #endif

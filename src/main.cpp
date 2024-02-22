@@ -8,16 +8,18 @@
 void setup()
 {
   Serial.begin(115200);
-  // connectAWS();
-  // InitBuiltinLED();
+  connectAWS();
+  InitBuiltinLED();
+
   InitEEPROM();
   Initialize_Timer();
-  InitRGBLamp();
+  // InitRGBLamp();
+  InitWhiteLamp();
 }
 
 void loop()
 {
-  // client.loop();
+  client.loop();
   LED_Task();
   Memory_Task();
   delay(1000);

@@ -25,6 +25,7 @@
 
 // Definition of DataTypes
 #define JSONDOCUMENT                                        JsonDocument
+#define COOMUNICATION_WHITE_LAMP_FLAG                       White_Lamp_Flag
 
 // Definition of Function for Portability
 #define PIN_MODE(               Micro_PIN, Micro_MODE       )           pinMode(            Micro_PIN,  Micro_MODE      )
