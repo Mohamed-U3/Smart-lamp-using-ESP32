@@ -26,4 +26,10 @@ extern bool         minutes_counter_Flag;
 
 extern bool         White_Lamp_Flag;
 
+extern uint8_t      global_RED_color;
+extern uint8_t      global_GREEN_color;
+extern uint8_t      global_BLUE_color;
+extern uint8_t      global_INTENSITY;
+extern uint8_t      global_WARMNESS;
+
 #endif

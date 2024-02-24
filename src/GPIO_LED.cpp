@@ -102,14 +102,15 @@ void SetWhiteLamp(uint8_t Worm, uint8_t Intensity)
  */
 void LED_Task()
 {
-  if (GPIO_LED_WHITE_LAMP_FLAG == true)
-  {
-    SetWhiteLamp(255, 255);
-  }
-  else
-  {
-    SetWhiteLamp(0, 0);
-  }
+  SetWhiteLamp(GPIO_WARMNESS_GLOBAL_VAR, GPIO_INTENSITY_GLOBAL_VAR);
+  // if (GPIO_LED_WHITE_LAMP_FLAG == true)
+  // {
+  //   SetWhiteLamp(255, 255);
+  // }
+  // else
+  // {
+  //   SetWhiteLamp(0, 0);
+  // }
 }
 
 /**

@@ -20,7 +20,11 @@
  */
 // class and global variable definitions
 WiFiClientSecure net = WiFiClientSecure();
+WiFiClient netLocal;
 PubSubClient client(net);
+PubSubClient clientLocal(netLocal);
+
+uint8_t local_AWS_secection = 0;
 
 /*
  * ***********************************************************
@@ -33,26 +37,46 @@ PubSubClient client(net);
  * @brief : handles message from MQTT servers
  * @author: Engineer\ Mohamed yousry
  * @date  : 20/02/2024
- * @param : void
+ * @param : char *topic, byte *payload, uint32_t length
  * @return: void
  * ***********************************************************
  */
-void messageHandler(char *topic, byte *payload, unsigned int length)
+void messageHandler(char *topic, byte *payload, uint32_t length)
 {
     SERIAL_PRINT("incoming: ");
     SERIAL_PRINTLN(topic);
 
-    JSONDOCUMENT doc;
-    DESERIALIZEJSON(doc, payload);
-    const char *message = doc["message"];
-    SERIAL_PRINTLN();
+    JSONDOCUMENT filter;
+    filter["intensity"]         = true;
+    filter["warmness"]          = true;
+    filter["color"]["red"]      = true;
+    filter["color"]["green"]    = true;
+    filter["color"]["blue"]     = true;
 
-    for (int i = 0; i < length; i++)
+
+    JSONDOCUMENT doc;
+    DESERIALIZATIONERROR DE_error = DESERIALIZEJSON(doc, payload, DeserializationOption::Filter(filter));
+    if (DE_error)
     {
-        SERIAL_PRINT((char)payload[i]); // Pring payload content
+        Serial.print(F("JSON parsing failed! Error: "));
+        Serial.println(DE_error.c_str());
+        return;
     }
     SERIAL_PRINTLN();
 
+    COMM_INTENSITY_GLOBAL_VAR   = (uint8_t) doc["intensity"];
+    COMM_WARMNESS_GLOBAL_VAR    = (uint8_t) doc["warmness"];
+    COMM_RED_GLOBAL_VAR         = (uint8_t) doc["color"]["red"];
+    COMM_GREEN_GLOBAL_VAR       = (uint8_t) doc["color"]["green"];
+    COMM_BLUE_GLOBAL_VAR        = (uint8_t) doc["color"]["blue"];
+
+    for (int i = 0; i < length; i++)
+    {
+        SERIAL_PRINT((char)payload[i]); // Printing payload content
+    }
+    SERIAL_PRINTLN();
+
+    /* 
     char led = (char)payload[0]; // Extracting the controlling command from the Payload to Controlling LED from AWS
     SERIAL_PRINT("Command: ");
     SERIAL_PRINTLN(led);
@@ -70,6 +94,7 @@ void messageHandler(char *topic, byte *payload, unsigned int length)
         SERIAL_PRINTLN("Lamp_State changed to LOW");
     }
     SERIAL_PRINTLN();
+     */
 }
 
 /**
@@ -132,8 +157,16 @@ void connectAWS()
 
     while (!CLIENT_CONNECT(THINGNAME))
     {
+        static uint8_t counter = 0;
         SERIAL_PRINT(".");
         DELAY(100);
+        counter++;
+        if(counter >= 4)
+        {
+            local_AWS_secection = 1;
+            counter = 0;
+            break;
+        }
     }
 
     if (!CLIENT_CONNECTED())
@@ -162,4 +195,191 @@ void InitBuiltinLED()
 {
     PIN_MODE     (lamp, OUTPUT   );
     DIGITAL_WRITE(lamp, LOW      );
+}
+
+
+/**
+ * ***********************************************************
+ * @name  : localConnect
+ * @brief : Function that connect the ESP32 to local MQTT Server
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
+void localConnect()
+{
+    connectWiFi();
+    
+    // // Connect to the local MQTT broker
+    clientLocal.setServer(Local_Broker, 1883);
+
+    // Create a message handler
+    clientLocal.setCallback(messageHandler);
+
+    SERIAL_PRINTLN("Connecting to Local MQTT");
+    while (!clientLocal.connect(THINGNAME))
+    {
+        static uint8_t counter = 0;
+        SERIAL_PRINT(".");
+        DELAY(100);
+        counter++;
+        if(counter >= 4)
+        {
+            local_AWS_secection = 2;
+            counter = 0;
+            break;
+        }
+    }
+
+    if (!clientLocal.connected())
+    {
+        SERIAL_PRINTLN("MQTT local Timeout!");
+        return;
+    }
+
+    // Subscribe to a topic
+    clientLocal.subscribe(AWS_IOT_SUBSCRIBE_TOPIC);
+
+    SERIAL_PRINTLN("Local MQTT Connected!");
+}
+
+/**
+ * ***********************************************************
+ * @name  : performPing
+ * @brief : test function for ensuring the connection
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 24/02/2024
+ * @param : const char *host, int8_t attempts, int delayBetweenAttempts
+ * @return: bool
+ * ***********************************************************
+ */
+bool performPing(const char *host, int8_t attempts, int delayBetweenAttempts)
+{
+    if(host == AWS_IOT_ENDPOINT)
+    {
+        for (int8_t i = 0; i < attempts; i++)
+        {
+            Serial.print("Ping attempt #");
+            Serial.println(i + 1);
+
+            WiFiClient netLocal;
+            if (netLocal.connect(host, 8883))
+            {
+                Serial.println("Ping successful!");
+                netLocal.stop();
+                return true; // Return true if ping is successful
+            }
+            else
+            {
+                Serial.println("Ping failed");
+            }
+
+            delay(delayBetweenAttempts);
+        }
+    }
+    else if(host == Local_Broker)
+    {
+        for (int8_t i = 0; i < attempts; i++)
+        {
+            Serial.print("Ping attempt #");
+            Serial.println(i + 1);
+
+            WiFiClient netLocal;
+            if (netLocal.connect(host, 1883))
+            {
+                Serial.println("Ping successful!");
+                netLocal.stop();
+                return true; // Return true if ping is successful
+            }
+            else
+            {
+                Serial.println("Ping failed");
+            }
+
+            delay(delayBetweenAttempts);
+        }
+    }
+    else
+    {
+        for (int8_t i = 0; i < attempts; i++)
+        {
+            Serial.print("Ping attempt #");
+            Serial.println(i + 1);
+
+            WiFiClient netLocal;
+            if (netLocal.connect(host, 80))
+            {
+                Serial.println("Ping successful!");
+                netLocal.stop();
+                return true; // Return true if ping is successful
+            }
+            else
+            {
+                Serial.println("Ping failed");
+            }
+
+            delay(delayBetweenAttempts);
+        }
+    }
+    
+
+    // If all ping attempts fail, return false
+    return false;
+}
+
+void checkConnection()
+{
+    connectWiFi();
+
+    
+    if(performPing(Local_Broker, 4, 1))
+    {
+        local_AWS_secection = 1;
+    }
+    else if(performPing(AWS_IOT_ENDPOINT, 4, 1))
+    {
+        local_AWS_secection = 2;
+    }
+    else
+    {
+        local_AWS_secection = 0;
+    }
+}
+
+/**
+ * ***********************************************************
+ * @name  : Communication_Task
+ * @brief : Task of Communication that connect the ESP32 to servers
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 24/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
+void Communication_Task()
+{
+    if(local_AWS_secection == 0)
+    {
+        checkConnection();
+    }
+    else if (local_AWS_secection == 1)
+    {
+        if (!clientLocal.connected())
+        {
+            // For Local MQTT server Connection
+            localConnect();
+        }
+        clientLocal.loop();
+    }
+    else if(local_AWS_secection == 2)
+    {
+        if (!client.connected())
+        {
+            // For AWS server Connection
+            connectAWS();
+        }
+        client.loop();
+    }
 }

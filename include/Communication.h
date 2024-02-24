@@ -23,8 +23,8 @@
  * ***********************************************************
  */
 // class declearations and global variable declearations
-extern WiFiClientSecure net;
-extern PubSubClient client;
+extern WiFiClientSecure     net;
+extern PubSubClient         client;
 
 /*
  * ***********************************************************
@@ -35,5 +35,7 @@ extern PubSubClient client;
 void messageHandler(char *topic, byte *payload, unsigned int length);
 void connectAWS();
 void InitBuiltinLED();
+void localConnect();
+void Communication_Task();
 
 #endif

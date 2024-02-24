@@ -8,7 +8,10 @@
 void setup()
 {
   Serial.begin(115200);
-  connectAWS();
+  // For AWS server Connection
+  //localConnect();
+  // For AWS server Connection
+  //connectAWS();
   InitBuiltinLED();
 
   InitEEPROM();
@@ -19,7 +22,7 @@ void setup()
 
 void loop()
 {
-  client.loop();
+  Communication_Task();
   LED_Task();
   Memory_Task();
   delay(1000);
