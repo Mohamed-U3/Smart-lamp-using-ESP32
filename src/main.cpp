@@ -16,8 +16,6 @@ void setup()
 
   InitEEPROM();
   Initialize_Timer();
-  // InitRGBLamp();
-  InitWhiteLamp();
 }
 
 void loop()
@@ -25,5 +23,4 @@ void loop()
   Communication_Task();
   LED_Task();
   Memory_Task();
-  delay(1000);
 }

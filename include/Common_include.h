@@ -21,6 +21,7 @@
 #include <PubSubClient.h>
 #include <WiFiClientSecure.h>
 #include <WiFi.h>
+#include <WiFiManager.h>
 
 #include "Global.h"
 

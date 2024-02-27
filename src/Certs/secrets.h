@@ -3,7 +3,7 @@
 #define SECRET
 #define THINGNAME "test1"                         //change this
 
-const char WIFI_SSID[]              = "MyPublicWiFi";    //"U3";
+const char WIFI_SSID[]              = "MyPublicWiFi";   //"U3";
 const char WIFI_PASSWORD[]          = "mmyralimmo1";
 const char AWS_IOT_ENDPOINT[]       = "a2mqmg268iuh1l-ats.iot.eu-north-1.amazonaws.com";       //change this
  

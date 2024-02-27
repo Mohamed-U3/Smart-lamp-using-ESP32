@@ -29,8 +29,9 @@
 // For White        
 #define Worm_pin 					        19
 
-#define GPIO_LED_WHITE_LAMP_FLAG            White_Lamp_Flag
+#define GPIO_CAHANGED_LAMP_PAR_FLAG         Changed_Lamp_par_Flag
 
+#define GPIO_LAMP_TYPE_VAR                  global_LAMPTYPE
 #define GPIO_INTENSITY_GLOBAL_VAR           global_INTENSITY
 #define GPIO_WARMNESS_GLOBAL_VAR            global_WARMNESS
 #define GPIO_RED_GLOBAL_VAR                 global_RED_color

@@ -88,6 +88,8 @@ void SetWhiteLamp(uint8_t Worm, uint8_t Intensity)
 {
   ANALOG_WRITE(Worm_pin,    Worm      );
   ANALOG_WRITE(WHITE_pin,   Intensity );
+  ANALOG_WRITE(GREEN_pin,   0         );
+  ANALOG_WRITE(BLUE_pin,    0         );
 }
 
 /**
@@ -102,15 +104,27 @@ void SetWhiteLamp(uint8_t Worm, uint8_t Intensity)
  */
 void LED_Task()
 {
-  SetWhiteLamp(GPIO_WARMNESS_GLOBAL_VAR, GPIO_INTENSITY_GLOBAL_VAR);
-  // if (GPIO_LED_WHITE_LAMP_FLAG == true)
-  // {
-  //   SetWhiteLamp(255, 255);
-  // }
-  // else
-  // {
-  //   SetWhiteLamp(0, 0);
-  // }
+  if(GPIO_CAHANGED_LAMP_PAR_FLAG == true)
+  {
+    if (strcmp(GPIO_LAMP_TYPE_VAR, "WHITE") == 0)
+    {
+      InitWhiteLamp();
+      SERIAL_PRINTLN("WHITE lamp type Initalized");
+      SetWhiteLamp(GPIO_WARMNESS_GLOBAL_VAR, GPIO_INTENSITY_GLOBAL_VAR);
+    }
+    else if (strcmp(GPIO_LAMP_TYPE_VAR, "RGB") == 0)
+    {
+      InitRGBLamp();
+      SERIAL_PRINTLN("RGB lamp type Initalized");
+      SetRGBLamp(GPIO_RED_GLOBAL_VAR, GPIO_GREEN_GLOBAL_VAR, GPIO_BLUE_GLOBAL_VAR, GPIO_INTENSITY_GLOBAL_VAR);
+    }
+    else
+    {
+      SERIAL_PRINTLN("Error: Wrong lamp type entered.");
+    }
+
+    GPIO_CAHANGED_LAMP_PAR_FLAG = false;
+  }
 }
 
 /**

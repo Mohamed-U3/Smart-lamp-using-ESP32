@@ -47,6 +47,7 @@ void messageHandler(char *topic, byte *payload, uint32_t length)
     SERIAL_PRINTLN(topic);
 
     JSONDOCUMENT filter;
+    filter["LampType"]          = true;
     filter["intensity"]         = true;
     filter["warmness"]          = true;
     filter["color"]["red"]      = true;
@@ -64,6 +65,7 @@ void messageHandler(char *topic, byte *payload, uint32_t length)
     }
     SERIAL_PRINTLN();
 
+    COMM_LAMP_TYPE_VAR          = doc["LampType"];
     COMM_INTENSITY_GLOBAL_VAR   = (uint8_t) doc["intensity"];
     COMM_WARMNESS_GLOBAL_VAR    = (uint8_t) doc["warmness"];
     COMM_RED_GLOBAL_VAR         = (uint8_t) doc["color"]["red"];
@@ -75,6 +77,8 @@ void messageHandler(char *topic, byte *payload, uint32_t length)
         SERIAL_PRINT((char)payload[i]); // Printing payload content
     }
     SERIAL_PRINTLN();
+
+    COOMUNICATION_CAHANGED_LAMP_PAR_FLAG = true;
 
     /* 
     char led = (char)payload[0]; // Extracting the controlling command from the Payload to Controlling LED from AWS
@@ -97,6 +101,7 @@ void messageHandler(char *topic, byte *payload, uint32_t length)
      */
 }
 
+
 /**
  * ***********************************************************
  * @name  : connectWiFi
@@ -109,7 +114,56 @@ void messageHandler(char *topic, byte *payload, uint32_t length)
  */
 void connectWiFi()
 {
+    //New algorithm
+
     again:
+    if (WIFI_STATUS() != WL_CONNECTED)
+    {
+        // WiFi.mode(WIFI_STA); // explicitly set mode, esp defaults to STA+AP
+        // it is a good practice to make sure your code sets wifi mode how you want it.
+
+        static uint8_t attempts = 0;
+
+        // WiFiManager, Local intialization. Once its business is done, there is no need to keep it around
+        WiFiManager wm;
+
+        // reset settings - wipe stored credentials for testing
+        // these are stored by the esp library
+        // wm.resetSettings();
+
+        // Automatically connect using saved credentials,
+        // if connection fails, it starts an access point with the specified name ( "AutoConnectAP"),
+        // if empty will auto generate SSID, if password is blank it will be anonymous AP (wm.autoConnect())
+        // then goes into a blocking loop awaiting configuration and will return success result
+
+        bool res;
+        // res = wm.autoConnect(); // auto generated AP name from chipid
+        // res = wm.autoConnect("AutoConnectAP"); // anonymous ap
+        res = wm.autoConnect("Smart Lamp AP"); // password protected ap
+
+        if (!res)
+        {
+            attempts++;
+            Serial.print("Failed to connect to saved WiFi .. attempt : ");
+            Serial.println(attempts);
+            if (attempts >= 4)
+            {
+                wm.resetSettings();
+                attempts = 0;
+            }
+            goto again;
+            // ESP.restart();
+        }
+        else
+        {
+            // if you get here you have connected to the WiFi
+            Serial.println("connected to saved WiFi...yeey :)");
+        }
+    }
+
+    //old algorithm
+
+    /* again:
     if (WIFI_STATUS() != WL_CONNECTED)
     {
         WIFI_MODE(WIFI_STA);
@@ -125,8 +179,9 @@ void connectWiFi()
             if (Wifi_count == 10)
                 goto again;
         }
-    }
+    } */
 }
+
 
 /**
  * ***********************************************************
@@ -161,7 +216,7 @@ void connectAWS()
         SERIAL_PRINT(".");
         DELAY(100);
         counter++;
-        if(counter >= 4)
+        if(counter >= 2)
         {
             local_AWS_secection = 1;
             counter = 0;
@@ -180,6 +235,7 @@ void connectAWS()
 
     SERIAL_PRINTLN("AWS IoT Connected!");
 }
+
 
 /**
  * ***********************************************************
@@ -213,19 +269,19 @@ void localConnect()
     connectWiFi();
     
     // // Connect to the local MQTT broker
-    clientLocal.setServer(Local_Broker, 1883);
+    CLIENTLOCAL_SET_SERVER(Local_Broker, 1883);
 
     // Create a message handler
-    clientLocal.setCallback(messageHandler);
+    CLIENTLOCAL_SET_CALLBACK(messageHandler);
 
     SERIAL_PRINTLN("Connecting to Local MQTT");
-    while (!clientLocal.connect(THINGNAME))
+    while (!CLIENTLOCAL_CONNECT(THINGNAME))
     {
         static uint8_t counter = 0;
         SERIAL_PRINT(".");
         DELAY(100);
         counter++;
-        if(counter >= 4)
+        if(counter >= 2)
         {
             local_AWS_secection = 2;
             counter = 0;
@@ -233,17 +289,18 @@ void localConnect()
         }
     }
 
-    if (!clientLocal.connected())
+    if (!CLIENTLOCAL_CONNECTED())
     {
         SERIAL_PRINTLN("MQTT local Timeout!");
         return;
     }
 
     // Subscribe to a topic
-    clientLocal.subscribe(AWS_IOT_SUBSCRIBE_TOPIC);
+    CLIENTLOCAL_SUBSCRIBE(AWS_IOT_SUBSCRIBE_TOPIC);
 
     SERIAL_PRINTLN("Local MQTT Connected!");
 }
+
 
 /**
  * ***********************************************************
@@ -329,6 +386,17 @@ bool performPing(const char *host, int8_t attempts, int delayBetweenAttempts)
     return false;
 }
 
+
+/**
+ * ***********************************************************
+ * @name  : checkConnection
+ * @brief : check which MQTT will be used Local or AWS
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 24/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void checkConnection()
 {
     connectWiFi();
@@ -347,6 +415,7 @@ void checkConnection()
         local_AWS_secection = 0;
     }
 }
+
 
 /**
  * ***********************************************************
