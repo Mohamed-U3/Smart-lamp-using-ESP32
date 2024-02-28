@@ -22,6 +22,41 @@
 
 /**
  * ***********************************************************
+ * @name  : Init_General_GPIO
+ * @brief : Initializing General Purpose Pins
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 28/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
+void Init_General_GPIO()
+{
+  PIN_MODE(TRIGGER_PIN, INPUT_PULLUP);
+}
+
+
+/**
+ * ***********************************************************
+ * @name  : CheckOnButton
+ * @brief : Checks if the button is pressed and change the flag
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 28/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
+void CheckOnButton()
+{
+  if (digitalRead(TRIGGER_PIN) == LOW)
+  {
+    GPIO_PRESSED_BUTTON_FLAG = true;
+  }
+}
+
+
+/**
+ * ***********************************************************
  * @name  : InitRGBLamp
  * @brief : Initializing RGB lamp
  * @author: Engineer\ Mohamed yousry
@@ -127,6 +162,10 @@ void LED_Task()
   }
 }
 
+void GPIO_Task()
+{
+  CheckOnButton();
+}
 /**
  * ***********************************************************
  * @name  : RGBLampTest

@@ -29,7 +29,11 @@
 // For White        
 #define Worm_pin 					        19
 
+// select which pin will trigger the configuration portal when set to LOW
+#define TRIGGER_PIN                         14
+
 #define GPIO_CAHANGED_LAMP_PAR_FLAG         Changed_Lamp_par_Flag
+#define GPIO_PRESSED_BUTTON_FLAG            global_Pressed_Button_Flag
 
 #define GPIO_LAMP_TYPE_VAR                  global_LAMPTYPE
 #define GPIO_INTENSITY_GLOBAL_VAR           global_INTENSITY

@@ -25,6 +25,7 @@ extern uint32_t     minutes_counter;
 extern bool         minutes_counter_Flag;
 
 extern bool         Changed_Lamp_par_Flag;
+extern bool         global_Pressed_Button_Flag;
 
 extern uint8_t      global_RED_color;
 extern uint8_t      global_GREEN_color;

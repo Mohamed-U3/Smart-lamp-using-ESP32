@@ -24,7 +24,8 @@ WiFiClient netLocal;
 PubSubClient client(net);
 PubSubClient clientLocal(netLocal);
 
-uint8_t local_AWS_secection = 0;
+uint8_t local_AWS_secection     = 0;
+uint8_t timeout                 = 120; // seconds to run for AP to stop if ESP32 didn't connect to WiFi
 
 /*
  * ***********************************************************
@@ -78,7 +79,7 @@ void messageHandler(char *topic, byte *payload, uint32_t length)
     }
     SERIAL_PRINTLN();
 
-    COOMUNICATION_CAHANGED_LAMP_PAR_FLAG = true;
+    COMM_CAHANGED_LAMP_PAR_FLAG = true;
 
     /* 
     char led = (char)payload[0]; // Extracting the controlling command from the Payload to Controlling LED from AWS
@@ -236,6 +237,44 @@ void connectAWS()
     SERIAL_PRINTLN("AWS IoT Connected!");
 }
 
+/**
+ * ***********************************************************
+ * @name  : OnDemandAPCheck
+ * @brief : checks of the button is pressed and then launch AP to configure the WiFi to be connected with
+ * @author: Engineer\ Mohamed yousry
+ * @date  : 28/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
+void OnDemandAPCheck()
+{
+  // is configuration portal requested?
+  if (COMM_PRESSED_BUTTON_FLAG == true)
+  {
+    WiFiManager wm;
+
+    // reset settings - for testing
+    // wm.resetSettings();
+
+    // set configportal timeout
+    wm.setConfigPortalTimeout(timeout);
+
+    if (!wm.startConfigPortal("Smart Lamp AP"))
+    {
+      Serial.println("failed to connect and hit timeout");
+      delay(3000);
+      // reset and try again, or maybe put it to deep sleep
+      ESP.restart();
+      delay(5000);
+    }
+
+    // if you get here you have connected to the WiFi
+    Serial.println("connected...yeey :)");
+  }
+
+  COMM_PRESSED_BUTTON_FLAG == false;
+}
 
 /**
  * ***********************************************************
@@ -429,6 +468,8 @@ void checkConnection()
  */
 void Communication_Task()
 {
+    OnDemandAPCheck();
+
     if(local_AWS_secection == 0)
     {
         checkConnection();

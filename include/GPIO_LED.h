@@ -21,8 +21,10 @@
  * ***********************************************************
  */
 // Function Declearation
+void Init_General_GPIO();
 void InitRGBLamp();
 void InitWhiteLamp();
 void LED_Task();
+void GPIO_Task();
 
 #endif

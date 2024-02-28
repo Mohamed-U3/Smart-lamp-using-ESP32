@@ -27,7 +27,9 @@
 // Definition of DataTypes      
 #define JSONDOCUMENT                            JsonDocument
 #define DESERIALIZATIONERROR                    DeserializationError
-#define COOMUNICATION_CAHANGED_LAMP_PAR_FLAG    Changed_Lamp_par_Flag
+
+#define COMM_CAHANGED_LAMP_PAR_FLAG             Changed_Lamp_par_Flag
+#define COMM_PRESSED_BUTTON_FLAG                global_Pressed_Button_Flag
 #define COMM_LAMP_TYPE_VAR                      global_LAMPTYPE
 #define COMM_INTENSITY_GLOBAL_VAR               global_INTENSITY
 #define COMM_WARMNESS_GLOBAL_VAR                global_WARMNESS
