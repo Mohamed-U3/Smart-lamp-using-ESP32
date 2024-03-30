@@ -33,6 +33,10 @@
 void Init_General_GPIO()
 {
   PIN_MODE(TRIGGER_PIN, INPUT_PULLUP);
+  ANALOG_WRITE(RED_pin,     0       );
+  ANALOG_WRITE(GREEN_pin,   0       );
+  ANALOG_WRITE(BLUE_pin,    0       );
+  ANALOG_WRITE(WHITE_pin,   0       );
 }
 
 

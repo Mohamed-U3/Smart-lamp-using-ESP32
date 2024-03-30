@@ -21,16 +21,16 @@
  * ***********************************************************
  */
 // Micros
-#define RED_pin 					        19
-#define GREEN_pin 					        21
-#define BLUE_pin 					        22
-#define WHITE_pin 					        23
+#define RED_pin 					        6
+#define GREEN_pin 					        5
+#define BLUE_pin 					        19
+#define WHITE_pin 					        4
     
 // For White        
-#define Worm_pin 					        19
+#define Worm_pin 					        6
 
 // select which pin will trigger the configuration portal when set to LOW
-#define TRIGGER_PIN                         14
+#define TRIGGER_PIN                         3
 
 #define GPIO_CAHANGED_LAMP_PAR_FLAG         Changed_Lamp_par_Flag
 #define GPIO_PRESSED_BUTTON_FLAG            global_Pressed_Button_Flag

@@ -42,7 +42,7 @@ uint8_t timeout                 = 120; // seconds to run for AP to stop if ESP32
  * @return: void
  * ***********************************************************
  */
-void messageHandler(char *topic, byte *payload, uint32_t length)
+void messageHandler(char *topic, uint8_t *payload, unsigned int length)
 {
     SERIAL_PRINT("incoming: ");
     SERIAL_PRINTLN(topic);

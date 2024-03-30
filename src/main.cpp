@@ -8,7 +8,7 @@
 void setup()
 {
   Serial.begin(115200);
-  InitBuiltinLED();
+  // InitBuiltinLED();
   Init_General_GPIO();
 
   InitEEPROM();
