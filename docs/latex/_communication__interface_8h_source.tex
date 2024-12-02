@@ -1,0 +1,64 @@
+\doxysection{Communication\+\_\+interface.\+h}
+\hypertarget{_communication__interface_8h_source}{}\label{_communication__interface_8h_source}\index{include/Communication\_interface.h@{include/Communication\_interface.h}}
+\mbox{\hyperlink{_communication__interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ COMMUNICATION\_INTERFACE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ COMMUNICATION\_INTERFACE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Includes}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common__include_8h}{Common\_include.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Defines}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ AWS\_IOT\_SUBSCRIBE\_TOPIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}esp32/sub"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ lamp\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ Local\_Broker\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}192.168.1.2"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Definition\ of\ DataTypes\ \ \ \ \ \ }}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ JSONDOCUMENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JsonDocument}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ DESERIALIZATIONERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DeserializationError}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ COMM\_CAHANGED\_LAMP\_PAR\_FLAG\ \ \ \ \ \ \ \ \ \ \ \ \ Changed\_Lamp\_par\_Flag}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ COMM\_PRESSED\_BUTTON\_FLAG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ global\_Pressed\_Button\_Flag}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ COMM\_LAMP\_TYPE\_VAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ global\_LAMPTYPE}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ COMM\_INTENSITY\_GLOBAL\_VAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ global\_INTENSITY}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ COMM\_WARMNESS\_GLOBAL\_VAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ global\_WARMNESS}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ COMM\_RED\_GLOBAL\_VAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ global\_RED\_color}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ COMM\_GREEN\_GLOBAL\_VAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ global\_GREEN\_color}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ COMM\_BLUE\_GLOBAL\_VAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ global\_BLUE\_color}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ Definition\ of\ Function\ for\ Portability}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ PIN\_MODE(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_PIN,\ Micro\_MODE\ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ pinMode(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_PIN,\ \ Micro\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ DIGITAL\_WRITE(\ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_PIN,\ Micro\_val\ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ digitalWrite(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_PIN,\ \ Micro\_val\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ SERIAL\_PRINT(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ Serial.print(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ SERIAL\_PRINTLN(\ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ Serial.println(\ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ DESERIALIZEJSON(\ \ \ \ Micro\_doc,\ Micro\_payload,\ Micro\_filter\ \ )\ \ \ \ \ \ \ \ \ \ \ deserializeJson(\ \ \ \ \ \ \ \ \ \ \ \ Micro\_doc,\ Micro\_payload,\ Micro\_filter\ \ )}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ WIFI\_MODE(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_Mode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ WiFi.mode(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_Mode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ WIFI\_BEGIN(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_SSID,Micro\_PASS\ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ WiFi.begin(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_SSID,\ Micro\_PASS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ WIFI\_STATUS(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ WiFi.status(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ NET\_SET\_CA\_CERT(\ \ \ \ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_CA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ net.setCACert(\ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_CA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ NET\_SET\_CERTIFICATE(\ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_CRT\ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ net.setCertificate(\ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_CRT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ NET\_SET\_PRIVATEKEY(\ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_PRIVTE\ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ net.setPrivateKey(\ \ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_PRIVTE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CLIENT\_SET\_SERVER(\ \ \ \ \ \ \ \ \ \ Micro\_ENDPOINT,\ Micro\_PORT\ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ client.setServer(\ \ \ \ \ \ \ \ \ \ \ Micro\_ENDPOINT,\ Micro\_PORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ CLIENTLOCAL\_SET\_SERVER(\ \ \ \ \ Micro\_ENDPOINT,\ Micro\_PORT\ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ clientLocal.setServer(\ \ \ \ \ \ Micro\_ENDPOINT,\ Micro\_PORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ CLIENT\_SET\_CALLBACK(\ \ \ \ \ \ \ \ Micro\_messageHandler\ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ client.setCallback(\ \ \ \ \ \ \ \ \ Micro\_messageHandler\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ CLIENTLOCAL\_SET\_CALLBACK(\ \ \ Micro\_messageHandler\ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ clientLocal.setCallback(\ \ \ \ Micro\_messageHandler\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ CLIENT\_CONNECT(\ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_THINGNAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ client.connect(\ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_THINGNAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ CLIENTLOCAL\_CONNECT(\ \ \ \ \ \ \ \ Micro\_THINGNAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ clientLocal.connect(\ \ \ \ \ \ \ \ Micro\_THINGNAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ CLIENT\_CONNECTED(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ client.connected(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ CLIENTLOCAL\_CONNECTED(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ clientLocal.connected(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ CLIENT\_SUBSCRIBE(\ \ \ \ \ \ \ \ \ \ \ Micro\_SUBSCRIBE\_TOPIC\ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ client.subscribe(\ \ \ \ \ \ \ \ \ \ \ Micro\_SUBSCRIBE\_TOPIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ CLIENTLOCAL\_SUBSCRIBE(\ \ \ \ \ \ Micro\_SUBSCRIBE\_TOPIC\ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ clientLocal.subscribe(\ \ \ \ \ \ \ \ \ \ \ Micro\_SUBSCRIBE\_TOPIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ DELAY(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_MS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ delay(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_MS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

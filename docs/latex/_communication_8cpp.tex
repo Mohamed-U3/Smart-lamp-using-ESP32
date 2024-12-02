@@ -1,0 +1,298 @@
+\doxysection{src/\+Communication.cpp File Reference}
+\hypertarget{_communication_8cpp}{}\label{_communication_8cpp}\index{src/Communication.cpp@{src/Communication.cpp}}
+
+
+\+: file contain functionalities of Communications  
+
+
+{\ttfamily \#include "{}Communication.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a2ff2ae73ca2856f8ede3eee3193bf4c8}\label{_communication_8cpp_a2ff2ae73ca2856f8ede3eee3193bf4c8} 
+Pub\+Sub\+Client {\bfseries client} (net)
+\item 
+\Hypertarget{_communication_8cpp_a7f05f1ef6997d2526460f1b634ae859f}\label{_communication_8cpp_a7f05f1ef6997d2526460f1b634ae859f} 
+Pub\+Sub\+Client {\bfseries client\+Local} (net\+Local)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ \+: message\+Handler}\par
+{\em \+: handles message from MQTT servers
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & char \texorpdfstring{$\ast$}{*}topic -\/\texorpdfstring{$>$}{>} pointer to the topic name. \\
+\hline
+{\em } & byte \texorpdfstring{$\ast$}{*}payload -\/\texorpdfstring{$>$}{>} pointer to the payload of the message received. \\
+\hline
+{\em } & uint32\+\_\+t length -\/\texorpdfstring{$>$}{>} the length of the message received \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_af6165cb873e065960ca20dae46c65b5d}\label{_communication_8cpp_af6165cb873e065960ca20dae46c65b5d} 
+void {\bfseries message\+Handler} (char \texorpdfstring{$\ast$}{*}topic, uint8\+\_\+t \texorpdfstring{$\ast$}{*}payload, unsigned int length)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: connect\+Wi\+Fi}\par
+{\em \+: Function that connect the ESP32 to Wi\+Fi network
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a245f8a30bc52d0a44531847e633fa6ac}\label{_communication_8cpp_a245f8a30bc52d0a44531847e633fa6ac} 
+void {\bfseries connect\+Wi\+Fi} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: connect\+AWS}\par
+{\em \+: Function that connect the ESP32 to AWS MQTT Broker
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a1862534eb79b30b8be532f2156d52173}\label{_communication_8cpp_a1862534eb79b30b8be532f2156d52173} 
+void {\bfseries connect\+AWS} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: On\+Demand\+APCheck}\par
+{\em \+: checks of the button is pressed and then launch AP to configure the Wi\+Fi SSID and Password
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 28/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a92b588047ee1cd7b03cc5d71b28dd344}\label{_communication_8cpp_a92b588047ee1cd7b03cc5d71b28dd344} 
+void {\bfseries On\+Demand\+APCheck} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: Init\+Builtin\+LED}\par
+{\em \+: Initialize the Built in LED
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a31b19ac4245b12be6dc960cb8a940f6b}\label{_communication_8cpp_a31b19ac4245b12be6dc960cb8a940f6b} 
+void {\bfseries Init\+Builtin\+LED} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: local\+Connect}\par
+{\em \+: Function that connect the ESP32 to local MQTT Broker
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a5bdfe98a597ccf1d2b9a11cdf3c68457}\label{_communication_8cpp_a5bdfe98a597ccf1d2b9a11cdf3c68457} 
+void {\bfseries local\+Connect} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: perform\+Ping}\par
+{\em \+: function used to test internet for ensuring the connection
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 24/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & const char \texorpdfstring{$\ast$}{*}host -\/\texorpdfstring{$>$}{>} host name to test on it (like URL) \\
+\hline
+{\em } & int8\+\_\+t attempts -\/\texorpdfstring{$>$}{>} number of attempts \\
+\hline
+{\em } & int delay\+Between\+Attempts -\/\texorpdfstring{$>$}{>} how long it take to try again between each attempts in ms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: bool -\/\texorpdfstring{$>$}{>} Return false if all ping attempts fail, Return true if ping is successful. \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a04880d56f9c7840768e0ba4ff59d2500}\label{_communication_8cpp_a04880d56f9c7840768e0ba4ff59d2500} 
+bool {\bfseries perform\+Ping} (const char \texorpdfstring{$\ast$}{*}host, int8\+\_\+t attempts, int delay\+Between\+Attempts)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: check\+Connection}\par
+{\em \+: check which MQTT will be used Local or AWS
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 24/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_ac14baada25fcf37c32a9a509436290d5}\label{_communication_8cpp_ac14baada25fcf37c32a9a509436290d5} 
+void {\bfseries check\+Connection} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: Communication\+\_\+\+Task}\par
+{\em \+: Task of Communication that handle all the Communication functionalities (wifi, AP, Brokers, etc.)
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 24/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a316387f14f988f7354d2112c8489c2fc}\label{_communication_8cpp_a316387f14f988f7354d2112c8489c2fc} 
+void {\bfseries Communication\+\_\+\+Task} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication_8cpp_a7ee8e4ada9ff084e8af22cba3d9d5078}\label{_communication_8cpp_a7ee8e4ada9ff084e8af22cba3d9d5078} 
+Wi\+Fi\+Client\+Secure {\bfseries net} = Wi\+Fi\+Client\+Secure()
+\item 
+\Hypertarget{_communication_8cpp_a7cf3d9d119b1130f9e5c47b6b1f03538}\label{_communication_8cpp_a7cf3d9d119b1130f9e5c47b6b1f03538} 
+Wi\+Fi\+Client {\bfseries net\+Local}
+\item 
+\Hypertarget{_communication_8cpp_aab980d19faa2964fa8a7a46b1ed4df6b}\label{_communication_8cpp_aab980d19faa2964fa8a7a46b1ed4df6b} 
+uint8\+\_\+t {\bfseries local\+\_\+\+AWS\+\_\+secection} = 0
+\item 
+\Hypertarget{_communication_8cpp_abaf366c6d73ec33baf041915b61b231f}\label{_communication_8cpp_abaf366c6d73ec33baf041915b61b231f} 
+uint8\+\_\+t {\bfseries timeout} = 120
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: file contain functionalities of Communications 
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 \DoxyHorRuler{0}
+ 
+\end{DoxyDate}

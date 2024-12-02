@@ -1,0 +1,94 @@
+\doxysection{include/\+Memory\+\_\+interface.h File Reference}
+\hypertarget{_memory__interface_8h}{}\label{_memory__interface_8h}\index{include/Memory\_interface.h@{include/Memory\_interface.h}}
+
+
+\+: file contain macros for functions from others modules, external global variables/objects.  
+
+
+{\ttfamily \#include "{}Common\+\_\+include.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_memory__interface_8h_a82a2abe958150c6af68420826f052ed4}\label{_memory__interface_8h_a82a2abe958150c6af68420826f052ed4} 
+\#define {\bfseries MINUTE\+\_\+\+COUNTER}~minutes\+\_\+counter
+\item 
+\Hypertarget{_memory__interface_8h_a981b236b7360d2a1ee2a277382805eab}\label{_memory__interface_8h_a981b236b7360d2a1ee2a277382805eab} 
+\#define {\bfseries MEM\+\_\+\+MIN\+\_\+\+COUNT\+\_\+\+FLAG}~minutes\+\_\+counter\+\_\+\+Flag
+\item 
+\#define \mbox{\hyperlink{_memory__interface_8h_a0956118fb3db5b99229b89bc28821778}{EEPROM\+\_\+\+BEGIN}}( Micro\+\_\+size)
+\item 
+\#define \mbox{\hyperlink{_memory__interface_8h_a4bf0e0606f2d1c99b10d766081d4d0b6}{EEPROM\+\_\+\+GET}}( Micro\+\_\+position,  Micro\+\_\+value)
+\item 
+\#define \mbox{\hyperlink{_memory__interface_8h_a8f9baa17d84184c6159562df6cea5fed}{EEPROM\+\_\+\+PUT}}( Micro\+\_\+position,  Micro\+\_\+value)
+\item 
+\#define \mbox{\hyperlink{_memory__interface_8h_a5938cc691e6e493a0257fa372b1e0ebc}{EEPROM\+\_\+\+COMMIT}}()
+\item 
+\#define \mbox{\hyperlink{_memory__interface_8h_addfd61db96c9c0bf8a7935934ea2a2ec}{SERIAL\+\_\+\+PRINTLN}}(Micro\+\_\+string)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: file contain macros for functions from others modules, external global variables/objects. 
+
+\DoxyHorRuler{0}
+
+
+\DoxyHorRuler{0}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_memory__interface_8h_a0956118fb3db5b99229b89bc28821778}\index{Memory\_interface.h@{Memory\_interface.h}!EEPROM\_BEGIN@{EEPROM\_BEGIN}}
+\index{EEPROM\_BEGIN@{EEPROM\_BEGIN}!Memory\_interface.h@{Memory\_interface.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_BEGIN}{EEPROM\_BEGIN}}
+{\footnotesize\ttfamily \label{_memory__interface_8h_a0956118fb3db5b99229b89bc28821778} 
+\#define EEPROM\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+size}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{EEPROM.begin(\ \ \ Micro\_size\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_memory__interface_8h_a5938cc691e6e493a0257fa372b1e0ebc}\index{Memory\_interface.h@{Memory\_interface.h}!EEPROM\_COMMIT@{EEPROM\_COMMIT}}
+\index{EEPROM\_COMMIT@{EEPROM\_COMMIT}!Memory\_interface.h@{Memory\_interface.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_COMMIT}{EEPROM\_COMMIT}}
+{\footnotesize\ttfamily \label{_memory__interface_8h_a5938cc691e6e493a0257fa372b1e0ebc} 
+\#define EEPROM\+\_\+\+COMMIT(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{EEPROM.commit(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_memory__interface_8h_a4bf0e0606f2d1c99b10d766081d4d0b6}\index{Memory\_interface.h@{Memory\_interface.h}!EEPROM\_GET@{EEPROM\_GET}}
+\index{EEPROM\_GET@{EEPROM\_GET}!Memory\_interface.h@{Memory\_interface.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_GET}{EEPROM\_GET}}
+{\footnotesize\ttfamily \label{_memory__interface_8h_a4bf0e0606f2d1c99b10d766081d4d0b6} 
+\#define EEPROM\+\_\+\+GET(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+position}{, }\item[{}]{Micro\+\_\+value}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{EEPROM.get(\ \ \ \ \ Micro\_position,\ Micro\_value\ )}
+
+\end{DoxyCode}
+\Hypertarget{_memory__interface_8h_a8f9baa17d84184c6159562df6cea5fed}\index{Memory\_interface.h@{Memory\_interface.h}!EEPROM\_PUT@{EEPROM\_PUT}}
+\index{EEPROM\_PUT@{EEPROM\_PUT}!Memory\_interface.h@{Memory\_interface.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_PUT}{EEPROM\_PUT}}
+{\footnotesize\ttfamily \label{_memory__interface_8h_a8f9baa17d84184c6159562df6cea5fed} 
+\#define EEPROM\+\_\+\+PUT(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+position}{, }\item[{}]{Micro\+\_\+value}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{EEPROM.put(\ \ \ \ \ Micro\_position,\ Micro\_value\ )}
+
+\end{DoxyCode}
+\Hypertarget{_memory__interface_8h_addfd61db96c9c0bf8a7935934ea2a2ec}\index{Memory\_interface.h@{Memory\_interface.h}!SERIAL\_PRINTLN@{SERIAL\_PRINTLN}}
+\index{SERIAL\_PRINTLN@{SERIAL\_PRINTLN}!Memory\_interface.h@{Memory\_interface.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_PRINTLN}{SERIAL\_PRINTLN}}
+{\footnotesize\ttfamily \label{_memory__interface_8h_addfd61db96c9c0bf8a7935934ea2a2ec} 
+\#define SERIAL\+\_\+\+PRINTLN(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+string}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Serial.println(\ Micro\_string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}

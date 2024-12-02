@@ -1,0 +1,348 @@
+\doxysection{include/\+Communication\+\_\+interface.h File Reference}
+\hypertarget{_communication__interface_8h}{}\label{_communication__interface_8h}\index{include/Communication\_interface.h@{include/Communication\_interface.h}}
+
+
+\+: file contain macros for functions from others modules, external global variables/objects.  
+
+
+{\ttfamily \#include "{}Common\+\_\+include.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_communication__interface_8h_ac035b455611e9c25664c6a83a3e548f6}\label{_communication__interface_8h_ac035b455611e9c25664c6a83a3e548f6} 
+\#define {\bfseries AWS\+\_\+\+IOT\+\_\+\+SUBSCRIBE\+\_\+\+TOPIC}~"{}esp32/sub"{}
+\item 
+\Hypertarget{_communication__interface_8h_a58916912af28de3ee9ad9fd0392e0c53}\label{_communication__interface_8h_a58916912af28de3ee9ad9fd0392e0c53} 
+\#define {\bfseries lamp}~2
+\item 
+\Hypertarget{_communication__interface_8h_a6cfddd1964dd036f841134a2e8b84ac4}\label{_communication__interface_8h_a6cfddd1964dd036f841134a2e8b84ac4} 
+\#define {\bfseries Local\+\_\+\+Broker}~"{}192.\+168.\+1.\+2"{}
+\item 
+\Hypertarget{_communication__interface_8h_a096e6615fa8ad76a71d37aa216c52ee7}\label{_communication__interface_8h_a096e6615fa8ad76a71d37aa216c52ee7} 
+\#define {\bfseries JSONDOCUMENT}~Json\+Document
+\item 
+\Hypertarget{_communication__interface_8h_a9241bf0fca0e6fb6a2ad8774219d653e}\label{_communication__interface_8h_a9241bf0fca0e6fb6a2ad8774219d653e} 
+\#define {\bfseries DESERIALIZATIONERROR}~Deserialization\+Error
+\item 
+\Hypertarget{_communication__interface_8h_a85634ac37711ffaf1fc3d64e4c5ec439}\label{_communication__interface_8h_a85634ac37711ffaf1fc3d64e4c5ec439} 
+\#define {\bfseries COMM\+\_\+\+CAHANGED\+\_\+\+LAMP\+\_\+\+PAR\+\_\+\+FLAG}~Changed\+\_\+\+Lamp\+\_\+par\+\_\+\+Flag
+\item 
+\Hypertarget{_communication__interface_8h_a41d1e475b7d5b6ce2c6a3bf8784282f3}\label{_communication__interface_8h_a41d1e475b7d5b6ce2c6a3bf8784282f3} 
+\#define {\bfseries COMM\+\_\+\+PRESSED\+\_\+\+BUTTON\+\_\+\+FLAG}~global\+\_\+\+Pressed\+\_\+\+Button\+\_\+\+Flag
+\item 
+\Hypertarget{_communication__interface_8h_abf5098103ade6fce9198e9de908411a7}\label{_communication__interface_8h_abf5098103ade6fce9198e9de908411a7} 
+\#define {\bfseries COMM\+\_\+\+LAMP\+\_\+\+TYPE\+\_\+\+VAR}~global\+\_\+\+LAMPTYPE
+\item 
+\Hypertarget{_communication__interface_8h_ae6d1610fdc5327fdb2074088f43ed760}\label{_communication__interface_8h_ae6d1610fdc5327fdb2074088f43ed760} 
+\#define {\bfseries COMM\+\_\+\+INTENSITY\+\_\+\+GLOBAL\+\_\+\+VAR}~global\+\_\+\+INTENSITY
+\item 
+\Hypertarget{_communication__interface_8h_a72efed38826af80390eb4c3b8ba69ec3}\label{_communication__interface_8h_a72efed38826af80390eb4c3b8ba69ec3} 
+\#define {\bfseries COMM\+\_\+\+WARMNESS\+\_\+\+GLOBAL\+\_\+\+VAR}~global\+\_\+\+WARMNESS
+\item 
+\Hypertarget{_communication__interface_8h_a5c715f7e19bb057d91fdbf3038841d8b}\label{_communication__interface_8h_a5c715f7e19bb057d91fdbf3038841d8b} 
+\#define {\bfseries COMM\+\_\+\+RED\+\_\+\+GLOBAL\+\_\+\+VAR}~global\+\_\+\+RED\+\_\+color
+\item 
+\Hypertarget{_communication__interface_8h_ace25e0eb0f2ad8b5edb825b88a43b072}\label{_communication__interface_8h_ace25e0eb0f2ad8b5edb825b88a43b072} 
+\#define {\bfseries COMM\+\_\+\+GREEN\+\_\+\+GLOBAL\+\_\+\+VAR}~global\+\_\+\+GREEN\+\_\+color
+\item 
+\Hypertarget{_communication__interface_8h_a8bf02e3d563cdab26c2417778a197565}\label{_communication__interface_8h_a8bf02e3d563cdab26c2417778a197565} 
+\#define {\bfseries COMM\+\_\+\+BLUE\+\_\+\+GLOBAL\+\_\+\+VAR}~global\+\_\+\+BLUE\+\_\+color
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_afe75a5e7fd4c09dba678059ffb895d2c}{PIN\+\_\+\+MODE}}( Micro\+\_\+\+PIN,  Micro\+\_\+\+MODE)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_af54b798096e568434ca464af38df8358}{DIGITAL\+\_\+\+WRITE}}( Micro\+\_\+\+PIN,  Micro\+\_\+val)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a216208fa2e295dd37a90ff1bb5605edb}{SERIAL\+\_\+\+PRINT}}( Micro\+\_\+string)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_ab4e5be070e71b978ce5e41a258467074}{SERIAL\+\_\+\+PRINTLN}}( Micro\+\_\+string)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_abbd55e525d4d84e6b5374bc252082272}{DESERIALIZEJSON}}( Micro\+\_\+doc,  Micro\+\_\+payload,  Micro\+\_\+filter)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a000c7b02a5ba640cf7a1c1b2caf32e99}{WIFI\+\_\+\+MODE}}( Micro\+\_\+\+Mode)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a51918ece3786f7bdc84002e734dcb273}{WIFI\+\_\+\+BEGIN}}( Micro\+\_\+\+SSID,  Micro\+\_\+\+PASS)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a55783355b89303380e5d7e20f51bbf7c}{WIFI\+\_\+\+STATUS}}()
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a2a740dda833850864274f9d0fb714427}{NET\+\_\+\+SET\+\_\+\+CA\+\_\+\+CERT}}( Micro\+\_\+\+AWS\+\_\+\+CERT\+\_\+\+CA)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a2b4c6a79116182f6740ff7802bb42b93}{NET\+\_\+\+SET\+\_\+\+CERTIFICATE}}( Micro\+\_\+\+AWS\+\_\+\+CERT\+\_\+\+CRT)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a0b02d8753234f6103b8fb835ee51cd9f}{NET\+\_\+\+SET\+\_\+\+PRIVATEKEY}}( Micro\+\_\+\+AWS\+\_\+\+CERT\+\_\+\+PRIVTE)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a55006e958d40f770696b44e1dcd98e86}{CLIENT\+\_\+\+SET\+\_\+\+SERVER}}( Micro\+\_\+\+ENDPOINT,  Micro\+\_\+\+PORT)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a24fceb1e2f7037a965fba10b90f89e86}{CLIENTLOCAL\+\_\+\+SET\+\_\+\+SERVER}}( Micro\+\_\+\+ENDPOINT,  Micro\+\_\+\+PORT)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a2ae82c01fa6629e3b71fe8c8f2ca53ee}{CLIENT\+\_\+\+SET\+\_\+\+CALLBACK}}( Micro\+\_\+message\+Handler)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a3b52429147bf451c7ffba621f8a80350}{CLIENTLOCAL\+\_\+\+SET\+\_\+\+CALLBACK}}( Micro\+\_\+message\+Handler)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a3cf33c688e6da8fb2ac9f985714a24d1}{CLIENT\+\_\+\+CONNECT}}( Micro\+\_\+\+THINGNAME)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a2cd1b422ff8a229407673681edc39881}{CLIENTLOCAL\+\_\+\+CONNECT}}( Micro\+\_\+\+THINGNAME)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a5621a7352c159a062b2284eb6f7f9360}{CLIENT\+\_\+\+CONNECTED}}()
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_aed4897b49491054a4be5b3a013785bfe}{CLIENTLOCAL\+\_\+\+CONNECTED}}()
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a34d865f4cf984a16c6dc28a12aa14ae4}{CLIENT\+\_\+\+SUBSCRIBE}}( Micro\+\_\+\+SUBSCRIBE\+\_\+\+TOPIC)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a402cde54762f036620a591c5fe9c9a48}{CLIENTLOCAL\+\_\+\+SUBSCRIBE}}( Micro\+\_\+\+SUBSCRIBE\+\_\+\+TOPIC)
+\item 
+\#define \mbox{\hyperlink{_communication__interface_8h_a170d12db83cc57a9a49f2c8bc7609a96}{DELAY}}( Micro\+\_\+\+MS)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: file contain macros for functions from others modules, external global variables/objects. 
+
+\DoxyHorRuler{0}
+
+
+\DoxyHorRuler{0}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_communication__interface_8h_a3cf33c688e6da8fb2ac9f985714a24d1}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENT\_CONNECT@{CLIENT\_CONNECT}}
+\index{CLIENT\_CONNECT@{CLIENT\_CONNECT}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_CONNECT}{CLIENT\_CONNECT}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a3cf33c688e6da8fb2ac9f985714a24d1} 
+\#define CLIENT\+\_\+\+CONNECT(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+THINGNAME}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{client.connect(\ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_THINGNAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a5621a7352c159a062b2284eb6f7f9360}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENT\_CONNECTED@{CLIENT\_CONNECTED}}
+\index{CLIENT\_CONNECTED@{CLIENT\_CONNECTED}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_CONNECTED}{CLIENT\_CONNECTED}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a5621a7352c159a062b2284eb6f7f9360} 
+\#define CLIENT\+\_\+\+CONNECTED(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{client.connected(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a2ae82c01fa6629e3b71fe8c8f2ca53ee}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENT\_SET\_CALLBACK@{CLIENT\_SET\_CALLBACK}}
+\index{CLIENT\_SET\_CALLBACK@{CLIENT\_SET\_CALLBACK}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_SET\_CALLBACK}{CLIENT\_SET\_CALLBACK}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a2ae82c01fa6629e3b71fe8c8f2ca53ee} 
+\#define CLIENT\+\_\+\+SET\+\_\+\+CALLBACK(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+message\+Handler}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{client.setCallback(\ \ \ \ \ \ \ \ \ Micro\_messageHandler\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a55006e958d40f770696b44e1dcd98e86}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENT\_SET\_SERVER@{CLIENT\_SET\_SERVER}}
+\index{CLIENT\_SET\_SERVER@{CLIENT\_SET\_SERVER}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_SET\_SERVER}{CLIENT\_SET\_SERVER}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a55006e958d40f770696b44e1dcd98e86} 
+\#define CLIENT\+\_\+\+SET\+\_\+\+SERVER(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+ENDPOINT}{, }\item[{}]{Micro\+\_\+\+PORT}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{client.setServer(\ \ \ \ \ \ \ \ \ \ \ Micro\_ENDPOINT,\ Micro\_PORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a34d865f4cf984a16c6dc28a12aa14ae4}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENT\_SUBSCRIBE@{CLIENT\_SUBSCRIBE}}
+\index{CLIENT\_SUBSCRIBE@{CLIENT\_SUBSCRIBE}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_SUBSCRIBE}{CLIENT\_SUBSCRIBE}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a34d865f4cf984a16c6dc28a12aa14ae4} 
+\#define CLIENT\+\_\+\+SUBSCRIBE(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+SUBSCRIBE\+\_\+\+TOPIC}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{client.subscribe(\ \ \ \ \ \ \ \ \ \ \ Micro\_SUBSCRIBE\_TOPIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a2cd1b422ff8a229407673681edc39881}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENTLOCAL\_CONNECT@{CLIENTLOCAL\_CONNECT}}
+\index{CLIENTLOCAL\_CONNECT@{CLIENTLOCAL\_CONNECT}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENTLOCAL\_CONNECT}{CLIENTLOCAL\_CONNECT}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a2cd1b422ff8a229407673681edc39881} 
+\#define CLIENTLOCAL\+\_\+\+CONNECT(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+THINGNAME}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{clientLocal.connect(\ \ \ \ \ \ \ \ Micro\_THINGNAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_aed4897b49491054a4be5b3a013785bfe}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENTLOCAL\_CONNECTED@{CLIENTLOCAL\_CONNECTED}}
+\index{CLIENTLOCAL\_CONNECTED@{CLIENTLOCAL\_CONNECTED}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENTLOCAL\_CONNECTED}{CLIENTLOCAL\_CONNECTED}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_aed4897b49491054a4be5b3a013785bfe} 
+\#define CLIENTLOCAL\+\_\+\+CONNECTED(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{clientLocal.connected(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a3b52429147bf451c7ffba621f8a80350}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENTLOCAL\_SET\_CALLBACK@{CLIENTLOCAL\_SET\_CALLBACK}}
+\index{CLIENTLOCAL\_SET\_CALLBACK@{CLIENTLOCAL\_SET\_CALLBACK}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENTLOCAL\_SET\_CALLBACK}{CLIENTLOCAL\_SET\_CALLBACK}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a3b52429147bf451c7ffba621f8a80350} 
+\#define CLIENTLOCAL\+\_\+\+SET\+\_\+\+CALLBACK(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+message\+Handler}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{clientLocal.setCallback(\ \ \ \ Micro\_messageHandler\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a24fceb1e2f7037a965fba10b90f89e86}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENTLOCAL\_SET\_SERVER@{CLIENTLOCAL\_SET\_SERVER}}
+\index{CLIENTLOCAL\_SET\_SERVER@{CLIENTLOCAL\_SET\_SERVER}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENTLOCAL\_SET\_SERVER}{CLIENTLOCAL\_SET\_SERVER}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a24fceb1e2f7037a965fba10b90f89e86} 
+\#define CLIENTLOCAL\+\_\+\+SET\+\_\+\+SERVER(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+ENDPOINT}{, }\item[{}]{Micro\+\_\+\+PORT}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{clientLocal.setServer(\ \ \ \ \ \ Micro\_ENDPOINT,\ Micro\_PORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a402cde54762f036620a591c5fe9c9a48}\index{Communication\_interface.h@{Communication\_interface.h}!CLIENTLOCAL\_SUBSCRIBE@{CLIENTLOCAL\_SUBSCRIBE}}
+\index{CLIENTLOCAL\_SUBSCRIBE@{CLIENTLOCAL\_SUBSCRIBE}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{CLIENTLOCAL\_SUBSCRIBE}{CLIENTLOCAL\_SUBSCRIBE}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a402cde54762f036620a591c5fe9c9a48} 
+\#define CLIENTLOCAL\+\_\+\+SUBSCRIBE(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+SUBSCRIBE\+\_\+\+TOPIC}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{clientLocal.subscribe(\ \ \ \ \ \ \ \ \ \ \ Micro\_SUBSCRIBE\_TOPIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a170d12db83cc57a9a49f2c8bc7609a96}\index{Communication\_interface.h@{Communication\_interface.h}!DELAY@{DELAY}}
+\index{DELAY@{DELAY}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{DELAY}{DELAY}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a170d12db83cc57a9a49f2c8bc7609a96} 
+\#define DELAY(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+MS}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{delay(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_MS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_abbd55e525d4d84e6b5374bc252082272}\index{Communication\_interface.h@{Communication\_interface.h}!DESERIALIZEJSON@{DESERIALIZEJSON}}
+\index{DESERIALIZEJSON@{DESERIALIZEJSON}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{DESERIALIZEJSON}{DESERIALIZEJSON}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_abbd55e525d4d84e6b5374bc252082272} 
+\#define DESERIALIZEJSON(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+doc}{, }\item[{}]{Micro\+\_\+payload}{, }\item[{}]{Micro\+\_\+filter}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{deserializeJson(\ \ \ \ \ \ \ \ \ \ \ \ Micro\_doc,\ Micro\_payload,\ Micro\_filter\ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_af54b798096e568434ca464af38df8358}\index{Communication\_interface.h@{Communication\_interface.h}!DIGITAL\_WRITE@{DIGITAL\_WRITE}}
+\index{DIGITAL\_WRITE@{DIGITAL\_WRITE}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{DIGITAL\_WRITE}{DIGITAL\_WRITE}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_af54b798096e568434ca464af38df8358} 
+\#define DIGITAL\+\_\+\+WRITE(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+PIN}{, }\item[{}]{Micro\+\_\+val}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{digitalWrite(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_PIN,\ \ Micro\_val\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a2a740dda833850864274f9d0fb714427}\index{Communication\_interface.h@{Communication\_interface.h}!NET\_SET\_CA\_CERT@{NET\_SET\_CA\_CERT}}
+\index{NET\_SET\_CA\_CERT@{NET\_SET\_CA\_CERT}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NET\_SET\_CA\_CERT}{NET\_SET\_CA\_CERT}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a2a740dda833850864274f9d0fb714427} 
+\#define NET\+\_\+\+SET\+\_\+\+CA\+\_\+\+CERT(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+AWS\+\_\+\+CERT\+\_\+\+CA}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{net.setCACert(\ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_CA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a2b4c6a79116182f6740ff7802bb42b93}\index{Communication\_interface.h@{Communication\_interface.h}!NET\_SET\_CERTIFICATE@{NET\_SET\_CERTIFICATE}}
+\index{NET\_SET\_CERTIFICATE@{NET\_SET\_CERTIFICATE}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NET\_SET\_CERTIFICATE}{NET\_SET\_CERTIFICATE}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a2b4c6a79116182f6740ff7802bb42b93} 
+\#define NET\+\_\+\+SET\+\_\+\+CERTIFICATE(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+AWS\+\_\+\+CERT\+\_\+\+CRT}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{net.setCertificate(\ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_CRT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a0b02d8753234f6103b8fb835ee51cd9f}\index{Communication\_interface.h@{Communication\_interface.h}!NET\_SET\_PRIVATEKEY@{NET\_SET\_PRIVATEKEY}}
+\index{NET\_SET\_PRIVATEKEY@{NET\_SET\_PRIVATEKEY}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NET\_SET\_PRIVATEKEY}{NET\_SET\_PRIVATEKEY}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a0b02d8753234f6103b8fb835ee51cd9f} 
+\#define NET\+\_\+\+SET\+\_\+\+PRIVATEKEY(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+AWS\+\_\+\+CERT\+\_\+\+PRIVTE}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{net.setPrivateKey(\ \ \ \ \ \ \ \ \ \ Micro\_AWS\_CERT\_PRIVTE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_afe75a5e7fd4c09dba678059ffb895d2c}\index{Communication\_interface.h@{Communication\_interface.h}!PIN\_MODE@{PIN\_MODE}}
+\index{PIN\_MODE@{PIN\_MODE}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{PIN\_MODE}{PIN\_MODE}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_afe75a5e7fd4c09dba678059ffb895d2c} 
+\#define PIN\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+PIN}{, }\item[{}]{Micro\+\_\+\+MODE}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pinMode(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_PIN,\ \ Micro\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a216208fa2e295dd37a90ff1bb5605edb}\index{Communication\_interface.h@{Communication\_interface.h}!SERIAL\_PRINT@{SERIAL\_PRINT}}
+\index{SERIAL\_PRINT@{SERIAL\_PRINT}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_PRINT}{SERIAL\_PRINT}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a216208fa2e295dd37a90ff1bb5605edb} 
+\#define SERIAL\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+string}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Serial.print(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_ab4e5be070e71b978ce5e41a258467074}\index{Communication\_interface.h@{Communication\_interface.h}!SERIAL\_PRINTLN@{SERIAL\_PRINTLN}}
+\index{SERIAL\_PRINTLN@{SERIAL\_PRINTLN}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_PRINTLN}{SERIAL\_PRINTLN}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_ab4e5be070e71b978ce5e41a258467074} 
+\#define SERIAL\+\_\+\+PRINTLN(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+string}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Serial.println(\ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a51918ece3786f7bdc84002e734dcb273}\index{Communication\_interface.h@{Communication\_interface.h}!WIFI\_BEGIN@{WIFI\_BEGIN}}
+\index{WIFI\_BEGIN@{WIFI\_BEGIN}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_BEGIN}{WIFI\_BEGIN}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a51918ece3786f7bdc84002e734dcb273} 
+\#define WIFI\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+SSID}{, }\item[{}]{Micro\+\_\+\+PASS}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{WiFi.begin(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_SSID,\ Micro\_PASS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a000c7b02a5ba640cf7a1c1b2caf32e99}\index{Communication\_interface.h@{Communication\_interface.h}!WIFI\_MODE@{WIFI\_MODE}}
+\index{WIFI\_MODE@{WIFI\_MODE}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_MODE}{WIFI\_MODE}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a000c7b02a5ba640cf7a1c1b2caf32e99} 
+\#define WIFI\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{Micro\+\_\+\+Mode}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{WiFi.mode(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Micro\_Mode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{_communication__interface_8h_a55783355b89303380e5d7e20f51bbf7c}\index{Communication\_interface.h@{Communication\_interface.h}!WIFI\_STATUS@{WIFI\_STATUS}}
+\index{WIFI\_STATUS@{WIFI\_STATUS}!Communication\_interface.h@{Communication\_interface.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_STATUS}{WIFI\_STATUS}}
+{\footnotesize\ttfamily \label{_communication__interface_8h_a55783355b89303380e5d7e20f51bbf7c} 
+\#define WIFI\+\_\+\+STATUS(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{WiFi.status(\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}

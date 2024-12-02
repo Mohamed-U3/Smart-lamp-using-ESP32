@@ -1,0 +1,303 @@
+\doxysection{src/\+GPIO\+\_\+\+LED.cpp File Reference}
+\hypertarget{_g_p_i_o___l_e_d_8cpp}{}\label{_g_p_i_o___l_e_d_8cpp}\index{src/GPIO\_LED.cpp@{src/GPIO\_LED.cpp}}
+
+
+\+: file contain functionalities of GPIO  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include "{}GPIO\+\_\+\+LED\+\_\+interface.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{Indent}\textbf{ \+: Init\+\_\+\+General\+\_\+\+GPIO}\par
+{\em \+: Initializing General Purpose Pins
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 28/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a8a3cf6dc5998e0068e99064048c7cd01}\label{_g_p_i_o___l_e_d_8cpp_a8a3cf6dc5998e0068e99064048c7cd01} 
+void {\bfseries Init\+\_\+\+General\+\_\+\+GPIO} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: Check\+On\+Button}\par
+{\em \+: Checks if the button is pressed and change the flag
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 28/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a903ff40df5a3d3f67f6c31078ddf445e}\label{_g_p_i_o___l_e_d_8cpp_a903ff40df5a3d3f67f6c31078ddf445e} 
+void {\bfseries Check\+On\+Button} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: Init\+RGBLamp}\par
+{\em \+: Initializing RGB lamp
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a124f64b34ccc23cde96b0bdffeb208c6}\label{_g_p_i_o___l_e_d_8cpp_a124f64b34ccc23cde96b0bdffeb208c6} 
+void {\bfseries Init\+RGBLamp} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: Init\+White\+Lamp}\par
+{\em \+: Initializing White lamp
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a8f5674085571998890bbe1549ad2e00c}\label{_g_p_i_o___l_e_d_8cpp_a8f5674085571998890bbe1549ad2e00c} 
+void {\bfseries Init\+White\+Lamp} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: Set\+RGBLamp}\par
+{\em \+: Set RGB Lamp lights and colors
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & uint8\+\_\+t Red -\/\texorpdfstring{$>$}{>} first pararmeter which indicated RED color level \\
+\hline
+{\em } & uint8\+\_\+t Green -\/\texorpdfstring{$>$}{>} second pararmeter which indicated Green color level \\
+\hline
+{\em } & uint8\+\_\+t Blue -\/\texorpdfstring{$>$}{>} third pararmeter which indicated Blue color level \\
+\hline
+{\em } & uint8\+\_\+t Intensity -\/\texorpdfstring{$>$}{>} forth pararmeter which indicated White color level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a3b4d21aa2aa65deee57989f4e5b15f2c}\label{_g_p_i_o___l_e_d_8cpp_a3b4d21aa2aa65deee57989f4e5b15f2c} 
+void {\bfseries Set\+RGBLamp} (uint8\+\_\+t Red, uint8\+\_\+t Green, uint8\+\_\+t Blue, uint8\+\_\+t Intensity)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: Set\+White\+Lamp}\par
+{\em \+: Set White Lamp lights and tcc
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & uint8\+\_\+t Worm -\/\texorpdfstring{$>$}{>} first pararmeter which indicated Worm color level \\
+\hline
+{\em } & uint8\+\_\+t Intensity -\/\texorpdfstring{$>$}{>} second pararmeter which indicated White color level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a7e8821dfc62689edf34b0e28962d5b1e}\label{_g_p_i_o___l_e_d_8cpp_a7e8821dfc62689edf34b0e28962d5b1e} 
+void {\bfseries Set\+White\+Lamp} (uint8\+\_\+t Worm, uint8\+\_\+t Intensity)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: LED\+\_\+\+Task}\par
+{\em \+: Tasks of LED module
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a14841334c2e5d74e1def5e9452fbe413}\label{_g_p_i_o___l_e_d_8cpp_a14841334c2e5d74e1def5e9452fbe413} 
+void {\bfseries LED\+\_\+\+Task} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: GPIO\+\_\+\+Task}\par
+{\em \+: Function that used to check on any button if it pressed or not.
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a6a57492f863706418fdfc0778a5866e6}\label{_g_p_i_o___l_e_d_8cpp_a6a57492f863706418fdfc0778a5866e6} 
+void {\bfseries GPIO\+\_\+\+Task} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: RGBLamp\+Test}\par
+{\em \+: Function that tests the RGB Lamp
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_aeee48929596e8769dc9f1d99cde76fda}\label{_g_p_i_o___l_e_d_8cpp_aeee48929596e8769dc9f1d99cde76fda} 
+void {\bfseries RGBLamp\+Test} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ \+: white\+Lamp\+Test}\par
+{\em \+: Function that tests the white Lamp
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void \DoxyHorRuler{0}
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_p_i_o___l_e_d_8cpp_a0a62a43c9095c1a6bdc789832627a397}\label{_g_p_i_o___l_e_d_8cpp_a0a62a43c9095c1a6bdc789832627a397} 
+void {\bfseries white\+Lamp\+Test} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+\+: file contain functionalities of GPIO 
+
+\DoxyHorRuler{0}
+
+
+\begin{DoxyAuthor}{Author}
+\+: Engineer\textbackslash{} Mohamed Yousry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 20/02/2024 \DoxyHorRuler{0}
+ 
+\end{DoxyDate}

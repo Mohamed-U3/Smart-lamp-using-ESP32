@@ -1,0 +1,41 @@
+\doxysection{Communication.\+h}
+\hypertarget{_communication_8h_source}{}\label{_communication_8h_source}\index{include/Communication.h@{include/Communication.h}}
+\mbox{\hyperlink{_communication_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ COMMUNICATION\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ COMMUNICATION\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Includes}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Dependancies}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Certs/secrets.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_communication__interface_8h}{Communication\_interface.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Global\ variables}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ class\ declearations\ and\ global\ variable\ declearations}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{extern}\ WiFiClientSecure\ \ \ \ \ net;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ PubSubClient\ \ \ \ \ \ \ \ \ client;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Prototypes}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ ***********************************************************}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ Functions\ Declearation}}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ messageHandler(\textcolor{keywordtype}{char}\ *topic,\ \textcolor{keywordtype}{byte}\ *payload,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ connectAWS();}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ InitBuiltinLED();}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ localConnect();}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ Communication\_Task();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
