@@ -10,13 +10,11 @@ The scope of the document extends to the architectural aspects of the smart lamp
 
 The purpose of this document is to serve as a valuable reference guide for developers, architects, and other stakeholders involved in the project. By documenting the software architecture, it aims to foster a shared understanding of the system's design, thereby facilitating smoother development processes, effective communication among team members, and providing a robust foundation for the maintenance and future enhancements of the smart lamp software. Through this systematic exploration of the architecture, the document aims to contribute to the overall reliability and robustness of the smart lamp system.
 
-[]: docs\html\index.html	"Documentation"
-
-
+[View Documentation](docs/html/index.html)
 
 
 ## Components:
 
-| Pins to Arduino | Description |
-| --------------- | ----------- |
-|                 |             |
+| Pins | Description |
+| ---- | ----------- |
+|      |             |
