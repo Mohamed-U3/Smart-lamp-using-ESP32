@@ -1,6 +1,6 @@
 /**
  * ***********************************************************
- * @file  : Timer.cpp
+ * @file  : Memory.cpp
  * @brief : file contain functionalities of memory
  * @author: Engineer\ Mohamed Yousry
  * @date  : 20/02/2024
@@ -95,7 +95,7 @@ void writeTotalMinutesToEEPROM(uint32_t totalMinutes)
  * @author: Engineer\ Mohamed yousry
  * @date  : 20/02/2024
  * @param : void
- * @return: void
+ * @return: uint32_t -> return total minutes of operating time that was stored in the flash memory
  * ***********************************************************
  */
 uint32_t readTotalMinutesFromEEPROM()

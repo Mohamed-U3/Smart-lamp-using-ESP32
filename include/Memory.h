@@ -1,8 +1,7 @@
 /**
  * ***********************************************************
  * @file  : Memory.h
- * @brief : file contain macros for functions from others
- * 			modules
+ * @brief : file contain Prototypes(Declearation) of functions.
  * ***********************************************************
  */
 #ifndef MEMORY_H

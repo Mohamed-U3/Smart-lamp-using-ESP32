@@ -2,7 +2,7 @@
  * ***********************************************************
  * @file  : GPIO_LED_interface.h
  * @brief : file contain macros for functions from others
- * 			modules
+ * 			modules, external global variables/objects.
  * ***********************************************************
  */
 #ifndef GPIO_LED_INTERFACE_H

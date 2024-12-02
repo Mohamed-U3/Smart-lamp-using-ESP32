@@ -1,8 +1,7 @@
 /**
  * ***********************************************************
  * @file  : Common_include.h
- * @brief : file contain macros for functions from others
- * 			modules
+ * @brief : file contain Dependancies of the other functions
  * ***********************************************************
  */
 #ifndef COMMON_INCLUDE_H

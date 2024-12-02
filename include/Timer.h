@@ -1,8 +1,7 @@
 /**
  * ***********************************************************
  * @file  : Timer.h
- * @brief : file contain macros for functions from others
- * 			modules
+ * @brief : file contain Prototypes(Declearation) of functions.
  * ***********************************************************
  */
 #ifndef TIMER_H

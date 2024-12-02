@@ -24,7 +24,7 @@
  * ***********************************************************
  * @name  : Init_General_GPIO
  * @brief : Initializing General Purpose Pins
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 28/02/2024
  * @param : void
  * @return: void
@@ -44,7 +44,7 @@ void Init_General_GPIO()
  * ***********************************************************
  * @name  : CheckOnButton
  * @brief : Checks if the button is pressed and change the flag
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 28/02/2024
  * @param : void
  * @return: void
@@ -58,12 +58,11 @@ void CheckOnButton()
   }
 }
 
-
 /**
  * ***********************************************************
  * @name  : InitRGBLamp
  * @brief : Initializing RGB lamp
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 20/02/2024
  * @param : void
  * @return: void
@@ -82,7 +81,7 @@ void InitRGBLamp()
  * ***********************************************************
  * @name  : InitWhiteLamp
  * @brief : Initializing White lamp
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 20/02/2024
  * @param : void
  * @return: void
@@ -99,9 +98,12 @@ void InitWhiteLamp()
  * ***********************************************************
  * @name  : SetRGBLamp
  * @brief : Set RGB Lamp lights and colors
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 20/02/2024
- * @param : void
+ * @param : uint8_t Red -> first pararmeter which indicated RED color level
+ * @param : uint8_t Green -> second pararmeter which indicated Green color level
+ * @param : uint8_t Blue -> third pararmeter which indicated Blue color level
+ * @param : uint8_t Intensity -> forth pararmeter which indicated White color level
  * @return: void
  * ***********************************************************
  */
@@ -117,9 +119,10 @@ void SetRGBLamp(uint8_t Red, uint8_t Green, uint8_t Blue, uint8_t Intensity)
  * ***********************************************************
  * @name  : SetWhiteLamp
  * @brief : Set White Lamp lights and tcc
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 20/02/2024
- * @param : void
+ * @param : uint8_t Worm -> first pararmeter which indicated Worm color level
+ * @param : uint8_t Intensity -> second pararmeter which indicated White color level
  * @return: void
  * ***********************************************************
  */
@@ -135,7 +138,7 @@ void SetWhiteLamp(uint8_t Worm, uint8_t Intensity)
  * ***********************************************************
  * @name  : LED_Task
  * @brief : Tasks of LED module
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 20/02/2024
  * @param : void
  * @return: void
@@ -166,15 +169,26 @@ void LED_Task()
   }
 }
 
+/**
+ * ***********************************************************
+ * @name  : GPIO_Task
+ * @brief : Function that used to check on any button if it pressed or not.
+ * @author: Engineer\ Mohamed Yousry
+ * @date  : 20/02/2024
+ * @param : void
+ * @return: void
+ * ***********************************************************
+ */
 void GPIO_Task()
 {
   CheckOnButton();
 }
+
 /**
  * ***********************************************************
  * @name  : RGBLampTest
  * @brief : Function that tests the RGB Lamp
- * @author: Engineer\ Mohamed yousry
+ * @author: Engineer\ Mohamed Yousry
  * @date  : 20/02/2024
  * @param : void
  * @return: void

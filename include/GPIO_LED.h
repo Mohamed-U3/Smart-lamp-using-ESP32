@@ -1,8 +1,7 @@
 /**
  * ***********************************************************
  * @file  : GPIO_LED.h
- * @brief : file contain macros for functions from others
- * 			modules
+ * @brief : file contain Prototypes(Declearation) of functions.
  * ***********************************************************
  */
 #ifndef GPIO_LED_H

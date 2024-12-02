@@ -2,7 +2,7 @@
  * ***********************************************************
  * @file  : Global.h
  * @brief : file contain macros for functions from others
- * 			modules
+ * 			modules, external global variables.
  * ***********************************************************
  */
 #ifndef GLOBAL_H

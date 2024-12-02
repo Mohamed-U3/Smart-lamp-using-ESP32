@@ -2,7 +2,7 @@
  * ***********************************************************
  * @file  : Timer_interface.h
  * @brief : file contain macros for functions from others
- * 			modules
+ * 			modules, external global variables/objects.
  * ***********************************************************
  */
 #ifndef TIMER_INTERFACE_H

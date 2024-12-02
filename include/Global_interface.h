@@ -1,6 +1,6 @@
 /**
  * ***********************************************************
- * @file  : Global.h
+ * @file  : Global_interface.h
  * @brief : file contain macros for functions from others
  * 			modules
  * ***********************************************************

@@ -30,7 +30,7 @@ Ticker timer;
 /**
  * ***********************************************************
  * @name  : Timer_event
- * @brief : Function that is called when the timer event fires
+ * @brief : Function that is called when the timer event fires to set a flag used in other function or files.
  * @author: Engineer\ Mohamed yousry
  * @date  : 20/02/2024
  * @param : void

@@ -19,13 +19,13 @@
  * ***********************************************************
  */
 // class and global variable definitions
-WiFiClientSecure net = WiFiClientSecure();
-WiFiClient netLocal;
-PubSubClient client(net);
-PubSubClient clientLocal(netLocal);
+WiFiClientSecure net = WiFiClientSecure();  // a wifi client used to handling/establishing Secure wifi communication with AWS broker
+WiFiClient netLocal;                        // a wifi client used to handling/establishing wifi communication with local network/broker
+PubSubClient client(net);                   // a client used for the AWS broker communication.
+PubSubClient clientLocal(netLocal);         // a client used for the local broker communication.
 
-uint8_t local_AWS_secection     = 0;
-uint8_t timeout                 = 120; // seconds to run for AP to stop if ESP32 didn't connect to WiFi
+uint8_t local_AWS_secection     = 0;        // a flag used to switch between the local brocker or the AWS broker.
+uint8_t timeout                 = 120;      // seconds to run for AP to stop if ESP32 didn't connect to WiFi
 
 /*
  * ***********************************************************
@@ -38,7 +38,9 @@ uint8_t timeout                 = 120; // seconds to run for AP to stop if ESP32
  * @brief : handles message from MQTT servers
  * @author: Engineer\ Mohamed yousry
  * @date  : 20/02/2024
- * @param : char *topic, byte *payload, uint32_t length
+ * @param : char *topic -> pointer to the topic name.
+ * @param : byte *payload -> pointer to the payload of the message received.
+ * @param : uint32_t length -> the length of the message received
  * @return: void
  * ***********************************************************
  */
@@ -187,7 +189,7 @@ void connectWiFi()
 /**
  * ***********************************************************
  * @name  : connectAWS
- * @brief : Function that connect the ESP32 to MQTT Server of AWS
+ * @brief : Function that connect the ESP32 to AWS MQTT Broker
  * @author: Engineer\ Mohamed yousry
  * @date  : 20/02/2024
  * @param : void
@@ -240,7 +242,7 @@ void connectAWS()
 /**
  * ***********************************************************
  * @name  : OnDemandAPCheck
- * @brief : checks of the button is pressed and then launch AP to configure the WiFi to be connected with
+ * @brief : checks of the button is pressed and then launch AP to configure the WiFi SSID and Password
  * @author: Engineer\ Mohamed yousry
  * @date  : 28/02/2024
  * @param : void
@@ -292,11 +294,10 @@ void InitBuiltinLED()
     DIGITAL_WRITE(lamp, LOW      );
 }
 
-
 /**
  * ***********************************************************
  * @name  : localConnect
- * @brief : Function that connect the ESP32 to local MQTT Server
+ * @brief : Function that connect the ESP32 to local MQTT Broker
  * @author: Engineer\ Mohamed yousry
  * @date  : 20/02/2024
  * @param : void
@@ -344,11 +345,13 @@ void localConnect()
 /**
  * ***********************************************************
  * @name  : performPing
- * @brief : test function for ensuring the connection
+ * @brief : function used to test internet for ensuring the connection
  * @author: Engineer\ Mohamed yousry
  * @date  : 24/02/2024
- * @param : const char *host, int8_t attempts, int delayBetweenAttempts
- * @return: bool
+ * @param : const char *host -> host name to test on it (like URL)
+ * @param : int8_t attempts -> number of attempts
+ * @param : int delayBetweenAttempts -> how long it take to try again between each attempts in ms
+ * @return: bool -> Return false if all ping attempts fail, Return true if ping is successful.
  * ***********************************************************
  */
 bool performPing(const char *host, int8_t attempts, int delayBetweenAttempts)
@@ -459,7 +462,7 @@ void checkConnection()
 /**
  * ***********************************************************
  * @name  : Communication_Task
- * @brief : Task of Communication that connect the ESP32 to servers
+ * @brief : Task of Communication that handle all the Communication functionalities (wifi, AP, Brokers, etc.)
  * @author: Engineer\ Mohamed yousry
  * @date  : 24/02/2024
  * @param : void

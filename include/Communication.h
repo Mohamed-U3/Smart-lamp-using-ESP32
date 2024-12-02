@@ -2,7 +2,8 @@
  * ***********************************************************
  * @file  : Communication.h
  * @brief : file contain macros for functions from others
- * 			modules
+ * 			modules, external global variables/objects
+ *          Prototypes of functions.
  * ***********************************************************
  */
 #ifndef COMMUNICATION_H
